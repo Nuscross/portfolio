@@ -1,0 +1,94 @@
+$bg-black: #120f0f;
+$color-black: #000000;
+$color-black-light: #1d150b;
+$color-white: #ffffff;
+$color-gold: #c49b63;
+$color-gold-dark: #674C2A;
+$color-grey: #808080;
+
+body {
+  font-size: 14px;
+  background-image: url("/src/assets/images/bg_4.jpg");
+  background-repeat: repeat-y;
+  background-color: $bg-black;
+}
+
+/* about */
+.about {
+  display: flex;
+  height: 650px;
+  .about-photo {
+    width: 50%;
+    height: 100%;
+    background-image: url("/src/assets/images/about.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+  .about-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 50%;
+    .box-content {
+      position: absolute;
+      left: -70px;
+      width: 70%;
+      padding: 50px 30px;
+      background: rgba(0,0,0,0.5);
+      h2 {
+        margin: 0 0 30px;
+        color: $color-white;
+        font-size: 40px;
+        text-transform: uppercase;
+        span {
+          color: $color-gold;
+        }
+      }
+      p {
+        color: $color-grey;
+        font-size: 16px;
+        line-height: 30px;
+      }
+    }
+  }
+}
+
+/* service */
+.service {
+  padding: 100px 20px;
+  background-color: $color-gold;
+  .service-container {
+    display: flex;
+    column-gap: 50px;
+    margin: 0 auto;
+    max-width: 1140px;
+    width: 100%;
+    .service-item {
+      text-align: center;
+      .service-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 50px;
+        width: 100px;
+        height: 100px;
+        border: 1px solid $color-gold-dark;
+        svg {
+          color: $color-black-light;
+          font-size: 50px;
+        }
+      }
+      h2 {
+        margin: 0 0 25px;
+        font-size: 18px;
+        font-weight: 500;
+        text-transform: uppercase;
+      }
+      p {
+        color: $color-black-light;
+        font-size: 16px;
+        line-height: 30px;
+      }
+    }
+  }
+}

@@ -1,32 +1,49 @@
-import { useEffect, useState } from "react";
+import { createBrowserRouter, RouterProvider }  from "react-router-dom";
+import { Layout, Home, Menu, Services, Blog, About, Contact, Cart } from "./pages/index";
+
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <Layout />,
+      children: [
+        {
+          index: true,
+          element: <Home />,
+        },
+        {
+          path: "/menu",
+          element: <Menu />,
+        },
+        {
+          path: "/services",
+          element: <Services />,
+        },
+        {
+          path: "/blog",
+          element: <Blog />,
+        },
+        {
+          path: "/about",
+          element: <About />,
+        },
+        {
+          path: "/contact",
+          element: <Contact />,
+        },
+        {
+          path: "/cart",
+          element: <Cart />,
+        },
+      ]
+    }
+  ]
+)
 
 function App() {
 
-  const [product,setProduct] = useState([]);
-
-  console.log(product);
-
-  useEffect(()=>{
-    fetchData();
-  },[])
-
-  const fetchData = () => {
-    const data = fetch('https://api.sampleapis.com/coffee/hot')
-    .then(res=>res.json())
-    .then(json=>setProduct(json))
-  }
-
   return (
-    <>
-      { product.map((item,index) => {
-        return (
-          <div key={index}>
-            <h2>{item.title}</h2>
-            <img alt="" src={item.image} style={{height:200}} />
-          </div>
-        )
-      })}
-    </>
+    <RouterProvider router={router}></RouterProvider>
   )
 
 }
