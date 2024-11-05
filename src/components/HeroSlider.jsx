@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"; 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -32,8 +33,8 @@ const HeroSlider = () => {
                   <h2>{title}</h2>
                   <p>{description}</p>
                   <div className="slider-button">
-                    <button type="button" className="button-left">{textButton1}</button>
-                    <button type="button" className="button-right">{textButton2}</button>
+                    <Link to="/cart" className="btn-primary">{textButton1}</Link>
+                    <Link to="/menu" className="btn-secondary">{textButton2}</Link>
                   </div>
                 </div>
                 <div className="slider-overlay"></div>

@@ -1,7 +1,7 @@
-$bg-black: #120f0f;
 $color-white: #ffffff;
 $color-gold: #c49b63;
 $color-grey: #808080;
+$bg-black: #120f0f;
 
 .footer {
   padding: 100px 20px;
@@ -41,12 +41,12 @@ $color-grey: #808080;
       }
       .ft-about, .ft-blog, .ft-question {
         .ft-title {
-          color: $color-white;
           margin-bottom: 40px;
+          color: $color-white;
           font-size: 16px;
           font-weight: bold;
-          text-transform: uppercase;
           letter-spacing: 1px;
+          text-transform: uppercase;
         }
       }
       .ft-blog, .ft-question {

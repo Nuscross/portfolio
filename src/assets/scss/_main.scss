@@ -10,10 +10,90 @@ body {
   font-size: 14px;
   background-image: url("/src/assets/images/bg_4.jpg");
   background-repeat: repeat-y;
+  background-attachment: fixed;
   background-color: $bg-black;
 }
 
-/* about */
+
+/** utility **/
+.pb-30 {
+  padding-bottom: 30px !important;
+}
+.font-14 {
+  font-size: 14px !important;
+}
+.btn-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $color-black;
+  background-color: $color-gold;
+  border: 1px solid $color-gold;
+  &:hover {
+    color: $color-gold;
+    background-color: transparent;
+  }
+}
+.btn-secondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $color-white;
+  background-color: transparent;
+  border: 1px solid $color-white;
+  &:hover {
+    color: $color-black;
+    background-color: $color-gold;
+    border: 1px solid $color-gold;
+  }
+}
+.btn-third {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $color-gold;
+  background-color: transparent;
+  border: 1px solid $color-gold;
+  &:hover {
+    color: $color-black;
+    background-color: $color-gold;
+    border: 1px solid $color-gold;
+  }
+}
+
+
+/** error **/
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: $bg-black;
+  p {
+    color: $color-grey;
+    font-size: 18px;
+  }
+  .title {
+    color: $color-gold;
+    font-size: 100px;
+  }
+  .sub-title {
+    margin-bottom: 20px;
+    color: $color-white;
+    font-size: 40px;
+  }
+  .btn-back {
+    display: block;
+    margin-top: 40px;
+    padding: 15px;
+    text-transform: uppercase;
+    border-radius: 8px;
+  }
+}
+
+
+/** about **/
 .about {
   display: flex;
   height: 650px;
@@ -39,6 +119,7 @@ body {
         margin: 0 0 30px;
         color: $color-white;
         font-size: 40px;
+        font-weight: bold;
         text-transform: uppercase;
         span {
           color: $color-gold;
@@ -53,7 +134,136 @@ body {
   }
 }
 
-/* service */
+
+/** home menu **/
+.h-menu {
+  padding: 100px 20px;
+  background-color: $bg-black;
+  .h-menu-container {
+    display: flex;
+    align-items: center;
+    column-gap: 60px;
+    margin: 0 auto;
+    max-width: 1140px;
+    width: 100%;
+    .h-menu-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      width: 50%;
+      h2 {
+        margin: 0 0 30px;
+        color: $color-white;
+        font-size: 40px;
+        font-weight: bold;
+        text-transform: uppercase;
+        span {
+          color: $color-gold;
+        }
+      }
+      p {
+        color: $color-grey;
+        font-size: 16px;
+        line-height: 30px;
+        text-align: right;
+      }
+      a {
+        width: 120px;
+        height: 50px;
+        font-size: 13px;
+      }
+    }
+    .h-menu-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      width: 50%;
+      .h-menu-photo {
+        width: 200px;
+        height: 200px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        &:nth-child(even) {
+          margin-top: 25px;
+        }
+      }
+    }
+  }
+}
+
+
+/** menu **/
+.menu {
+  padding: 100px 20px;
+  .menu-container {
+    margin: 0 auto;
+    max-width: 1140px;
+    width: 100%;
+    .menu-heading {
+      text-align: center;
+      h2 {
+        margin-bottom: 40px;
+        color: $color-white;
+        font-size: 40px;
+        font-weight: bold;
+        text-transform: uppercase;
+        span {
+          color: $color-gold;
+        }
+      }
+      p {
+        color: $color-grey;
+        font-size: 15px;
+      }
+    }
+    .menu-list {
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: 40px;
+      margin-top: 80px;
+      .menu-block {
+        margin-bottom: 70px;
+        width: calc(33% - 30px);
+      }
+      h3 {
+        margin-bottom: 20px;
+        color: $color-white;
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+      }
+      button {
+        margin: 30px auto 0;
+        padding: 10px;
+        font-size: 13px;
+      }
+      .description {
+        margin-bottom: 30px;
+        min-height: 100px;
+        color: $color-grey;
+        font-size: 14px;
+        line-height: 24px;
+        text-align: center;
+      }
+      .photo {
+        margin-bottom: 30px;
+        width: 100%;
+        height: 250px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+      .price {
+        color: $color-white;
+        font-size: 20px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+/** service **/
 .service {
   padding: 100px 20px;
   background-color: $color-gold;
@@ -88,6 +298,80 @@ body {
         color: $color-black-light;
         font-size: 16px;
         line-height: 30px;
+      }
+    }
+  }
+}
+
+
+/** blog **/
+.blog {
+  padding: 100px 20px;
+  .blog-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 1140px;
+    width: 100%;
+    .blog-heading {
+      text-align: center;
+      h2 {
+        margin-bottom: 40px;
+        color: $color-white;
+        font-size: 40px;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+      p {
+        color: $color-grey;
+        font-size: 15px;
+      }
+    }
+    .blog-list {
+      display: flex;
+      column-gap: 40px;
+      margin-top: 80px;
+      &.list-page {
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      .block-item {
+        margin-bottom: 70px;
+        width: calc(50% - 40px);
+      }
+      h3 {
+        margin-bottom: 20px;
+        font-size: 18px;
+        a {
+          color: $color-white;
+          &:hover {
+            color: $color-gold;
+          }
+        }
+      }
+      p {
+        margin-bottom: 15px;
+        color: $color-grey;
+        font-size: 16px;
+      }
+      small {
+        display: flex;
+        align-items: center;
+        color: $color-grey;
+        font-size: 14px;
+        svg {
+          display: inline;
+          margin-right: 10px;
+          color: $color-gold-dark;
+        }
+      }
+      .photo {
+        margin-bottom: 30px;
+        width: 100%;
+        height: 270px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
       }
     }
   }

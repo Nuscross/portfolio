@@ -2,7 +2,7 @@ import { FaClipboardList } from "react-icons/fa";
 import { FaTruckFast } from "react-icons/fa6";
 import { GiCoffeeBeans } from "react-icons/gi";
 
-export const Service = [
+export const ServiceData = [
   {
     title: 'Easy to Order',
     description: 'Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.',

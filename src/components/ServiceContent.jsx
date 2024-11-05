@@ -1,11 +1,11 @@
-import { Service } from "../data/Service";
+import { ServiceData } from "../data/Service";
 
 const ServiceContent = () => {
 
   return (
     <div className="service">
       <div className="service-container">
-      { Service.map((item,index)=>{
+      { ServiceData.map((item,index)=>{
         const { title, description, icon } = item;
         return (
           <div key={index} className="service-item">

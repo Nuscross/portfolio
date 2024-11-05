@@ -1,9 +1,17 @@
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { BlogData } from "../data/Blog";
 import { FaFacebook, FaInstagramSquare, FaTwitter } from "react-icons/fa";
-import { FaLocationDot, FaPhone, FaEnvelope } from "react-icons/fa6";
-import imageBlog1 from "../images/image_1.jpg";
-import imageBlog2 from "../images/image_2.jpg";
+import { FaLocationDot, FaPhone, FaEnvelope } from "react-icons/fa6"
 
 const Footer = () => {
+
+  const [blogContent,setBlockContent] = useState([]);
+    
+  useEffect(() => {
+    const BlogFilter = BlogData.filter((item) => item.id >= 1 && item.id <= 2);
+    setBlockContent(BlogFilter);
+  },[])
 
   return (
     <footer className="footer">
@@ -20,22 +28,20 @@ const Footer = () => {
           </div>
           <div className="ft-blog">
             <div className="ft-title">Recent Blog</div>
-            <div className="ft-media">
-              <a href="#">
-                <img alt="" src={imageBlog1} className="photo" />
-              </a>
-              <div className="media-body">
-                <a href="#">Even the all-powerful Pointing has no control about</a>
-              </div>
-            </div>
-            <div className="ft-media">
-              <a href="#">
-                <img alt="" src={imageBlog2} className="photo" />
-              </a>
-              <div className="media-body">
-                <a href="#">Even the all-powerful Pointing has no control about</a>
-              </div>
-            </div>
+            { blogContent.map((item)=>{
+              const { id, title, shortDescription, image, } = item;
+              return (
+                <div key={id} className="ft-media">
+                  <Link to="/">
+                    <img alt="" src={image} className="photo" />
+                  </Link>
+                  <div className="media-body">
+                    <Link to="/">{title}</Link>
+                    <p className="mt-1 font-14">{shortDescription}</p>
+                  </div>
+                </div>
+              )
+            })}
           </div>   
           <div className="ft-question">
             <div className="ft-title">Have a Questions?</div>

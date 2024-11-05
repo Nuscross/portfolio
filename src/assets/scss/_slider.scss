@@ -6,12 +6,12 @@ $color-gold: #c49b63;
   position: relative;
   background-color: $color-black;
   .slider-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
     width: 700px;
     color: $color-white;
     letter-spacing: 1px;
@@ -33,32 +33,14 @@ $color-gold: #c49b63;
       font-size: 18px;
     }
     .slider-button {
+      display: flex;
       margin-top: 30px;
-      button {
+      a {
         width: 120px;
         height: 50px;
         font-size: 13px;
-        & + button {
+        & + a {
           margin-left: 8px;
-        }
-        &.button-left {
-          color: $color-black;
-          background-color: $color-gold;
-          border: 1px solid $color-gold;
-          &:hover {
-            color: $color-gold;
-            background-color: transparent;
-          }
-        }
-        &.button-right {
-          color: $color-white;
-          background-color: transparent;
-          border: 1px solid $color-white;
-          &:hover {
-            color: $color-black;
-            background-color: $color-gold;
-            border: 1px solid $color-gold;
-          }
         }
       }
     }
