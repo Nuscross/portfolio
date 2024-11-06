@@ -16,6 +16,13 @@ body {
 
 
 /** utility **/
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+  transition: background-color 5000s;
+  -webkit-text-fill-color: $color-white !important;
+}
 .pb-30 {
   padding-bottom: 30px !important;
 }
@@ -68,6 +75,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 0 20px;
   min-height: 100vh;
   background-color: $bg-black;
   p {
@@ -376,3 +384,256 @@ body {
     }
   }
 }
+
+
+/** single blog **/
+.blog-single {
+  padding: 100px 20px;
+  .blog-single-container {
+    display: flex;
+    margin: 0 auto;
+    max-width: 1140px;
+    width: 100%;
+    .block-single-content {
+      width: 65%;
+      h2 {
+        margin-bottom: 30px;
+        color: $color-white;
+        font-size: 32px;
+        font-weight: bold;
+      }
+      p {
+        margin-bottom: 10px;
+        color: $color-grey;
+        font-size: 16px;
+        line-height: 32px;
+      }
+      small {
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+        color: $color-grey;
+        font-size: 16px;
+        svg {
+          display: inline;
+          margin-right: 10px;
+          color: $color-gold-dark;
+        }
+      }
+      img {
+        display: block;
+        margin-bottom: 30px;
+        max-width: 100%;
+        width: 100%;
+      }
+    }
+    .block-single-other {
+      padding-left: 60px;
+      width: 35%;
+      h3 {
+        margin-bottom: 30px;
+        color: $color-white;
+        font-size: 24px;
+      }
+      .other-article {
+        display: flex;
+        align-items: flex-start;
+        & + .other-article {
+          margin-top: 30px;
+        }
+        .photo {
+          margin-right: 24px;
+          width: 70px;
+          height: 70px;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
+        }
+        .icon {
+          margin: 6px 24px 0 0;
+          color: $color-white;
+          font-size: 16px;
+        }
+        .media-body {
+          flex: 1;
+          a {
+            color: $color-white;
+            font-size: 16px;
+            line-height: 26px;
+            &:hover {
+              color: $color-gold;
+            }
+          } 
+          p {
+            margin-bottom: 10px;
+            color: $color-grey;
+            font-size: 16px;
+            line-height: 26px;
+          }
+          small {
+            display: flex;
+            align-items: center;
+            color: $color-grey;
+            font-size: 12px;
+            svg {
+              display: inline;
+              margin-right: 10px;
+              color: $color-gold-dark;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/** contact **/
+.contact {
+  padding: 100px 20px;
+  .contact-container {
+    display: flex;
+    margin: 0 auto;
+    max-width: 1140px;
+    width: 100%;
+    .contact-content {
+      width: 50%;
+      h2 {
+        color: $color-white;
+        font-size: 24px;
+      }
+      ul {
+        li {
+          margin-top: 20px;
+          color: $color-gold;
+          font-size: 16px;
+          span {
+            color: $color-white;
+          }
+        }
+      }
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      row-gap: 20px;
+      width: 50%;
+      button {
+        margin-top: 20px;
+        padding: 15px;
+        width: max-content;
+        border-radius: 8px;
+      }
+      .input-form {
+        padding: 15px;
+        width: 100%;
+        color: $color-white;
+        background-color: transparent;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        outline: none;
+        &.textarea {
+          height: 150px;
+        }
+      }
+    }
+  }
+}
+
+
+/** sign in **/ 
+.sign-in {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0 20px;
+  background-image: url("/src/images/bg_1.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  &.admin {
+    background-image: url("/src/images/about.jpg");
+  }
+  .sign-in-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 10;
+  }
+  .sign-in-card {
+    position: absolute;
+    padding: 80px 50px;
+    max-width: 400px;
+    width: 100%;
+    border: 1px solid $color-gold;
+    border-radius: 8px;
+    z-index: 20;
+    h1 {
+      color: $color-white;
+      font-size: 32px;
+      line-height: 28px;
+      letter-spacing: 1px;
+      text-align: center;
+      text-transform: uppercase;
+      span {
+        letter-spacing: 5px;
+      }
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      row-gap: 30px;
+      margin-top: 50px;
+      .form-box {
+        width: 100%;
+        label {
+          display: block;
+          margin-bottom: 15px;
+          color: $color-gold;
+          font-size: 16px;;
+        }
+        input {
+          padding: 10px 0;
+          width: 100%;
+          color: $color-white;
+          background-color: transparent;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+          outline: none;
+        }
+        button {
+          margin-top: 20px;
+          padding: 10px;
+          width: 100%;
+          border-radius: 8px;
+        }
+      }
+    }
+  }
+  .admin-content {
+    position: absolute;
+    z-index: 20;
+    p {
+      color: $color-grey;
+      font-size: 18px;
+      text-align: center;
+    }
+    .title {
+      margin-bottom: 20px;
+      color: $color-white;
+      font-size: 40px;
+    }
+    .btn-back {
+      display: block;
+      margin: 40px auto 0;
+      width: max-content;
+      padding: 15px;
+      text-transform: uppercase;
+      border-radius: 8px;
+    }
+  }
+}
+

@@ -11,13 +11,14 @@ const Header = () => {
           <span className="text-[12px]">blend</span>
         </h1>
         <div className="nav-menu">
-          <NavLink to="/" className="nav-link">Home</NavLink>
-          <NavLink to="/menu" className="nav-link">Menu</NavLink>
-          <NavLink to="/services" className="nav-link">Services</NavLink>
-          <NavLink to="/blog" className="nav-link">Blog</NavLink>
-          <NavLink to="/about" className="nav-link">About</NavLink>
-          <NavLink to="/contact" className="nav-link">Contact</NavLink>
-          <NavLink to="/cart" className="nav-link">
+          <NavLink to="/" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>Home</NavLink>
+          <NavLink to="/menu" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>Menu</NavLink>
+          <NavLink to="/services" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>Services</NavLink>
+          <NavLink to="/blog" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>Blog</NavLink>
+          <NavLink to="/about" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>About</NavLink>
+          <NavLink to="/contact" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>Contact</NavLink>
+          <NavLink to="/sign-in" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>Sign In</NavLink>
+          <NavLink to="/cart" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
             <div className="item-count">0</div>
             <FaCartShopping className="icon-cart" />
           </NavLink>

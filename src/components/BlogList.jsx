@@ -15,11 +15,11 @@ const BlogList = ({BlogData,listPage}) => {
             const { id, title, shortDescription, image, postDate } = blogList;
             return (
               <div key={id} className={`${listPage ? "block-item" : ""}`}>
-                <Link to="/">
+                <Link to={`/blog/${id}`} onClick={() => window.scrollTo(0, 0)}>
                   <div className="photo" style={{ backgroundImage: `url(${image})`}}></div>
                 </Link>
                 <h3>
-                  <Link to="/">{title}</Link>
+                  <Link to={`/blog/${id}`} onClick={() => window.scrollTo(0, 0)}>{title}</Link>
                 </h3>
                 <p>{shortDescription}</p>
                 <small>

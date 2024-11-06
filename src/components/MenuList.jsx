@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useGlobalContext } from "../management/context";
 
 const MenuList = () => {
@@ -8,6 +8,8 @@ const MenuList = () => {
   const [menuList,setMenuList] = useState([]);
   const [dataInPage,setDataInPage] = useState([]);
   const [page,setPage] = useState(0);
+
+  const menuRef = useRef(null);
 
   useEffect(() => {
     const paginate = pagination(menuData);
@@ -29,8 +31,14 @@ const MenuList = () => {
     setPage(index);
   }
 
+  const scrollToMenu = () => {
+    if (menuRef.current) {
+      menuRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
-    <div className="menu">
+    <div className="menu" ref={menuRef}>
       <div className="menu-container">
         <div className="menu-heading">
           <h2>
@@ -59,7 +67,10 @@ const MenuList = () => {
             <button 
               key={index} 
               className={index === page ? 'page-btn active' : 'page-btn'} 
-              onClick={()=>handlePage(index)}>
+              onClick={()=>{
+                handlePage(index);
+                scrollToMenu();
+              }}>
                 {index+1}
             </button>)
         })}

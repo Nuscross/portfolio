@@ -33,7 +33,7 @@ const Footer = () => {
               return (
                 <div key={id} className="ft-media">
                   <Link to="/">
-                    <img alt="" src={image} className="photo" />
+                    <div className="photo" style={{ backgroundImage: `url(${image})`}} />
                   </Link>
                   <div className="media-body">
                     <Link to="/">{title}</Link>
