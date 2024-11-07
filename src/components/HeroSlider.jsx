@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom"; 
+import { Link } from "react-router-dom";
+import { sliderImage } from "../data/Slider.jsx";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { sliderImage } from "../data/Slider.jsx";
 
 const HeroSlider = () => {
 
@@ -30,7 +30,7 @@ const HeroSlider = () => {
               <div key={index}>
                 <div className="slider-content">
                   <div className="sub-title">{subTitle}</div>
-                  <h2>{title}</h2>
+                  <h2 className="title">{title}</h2>
                   <p>{description}</p>
                   <div className="slider-button">
                     <Link to="/cart" className="btn-primary">{textButton1}</Link>

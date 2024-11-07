@@ -6,6 +6,8 @@ $color-gold: #c49b63;
 $color-gold-dark: #674C2A;
 $color-grey: #808080;
 
+/******************************/
+
 body {
   font-size: 14px;
   background-image: url("/src/assets/images/bg_4.jpg");
@@ -14,60 +16,15 @@ body {
   background-color: $bg-black;
 }
 
-
-/** utility **/
-input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus, 
-input:-webkit-autofill:active  {
-  transition: background-color 5000s;
-  -webkit-text-fill-color: $color-white !important;
+/** container **/
+.section-container {
+  padding: 100px 20px;
 }
-.pb-30 {
-  padding-bottom: 30px !important;
+.content-container {
+  margin: 0 auto;
+  max-width: 1140px;
+  width: 100%;
 }
-.font-14 {
-  font-size: 14px !important;
-}
-.btn-primary {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: $color-black;
-  background-color: $color-gold;
-  border: 1px solid $color-gold;
-  &:hover {
-    color: $color-gold;
-    background-color: transparent;
-  }
-}
-.btn-secondary {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: $color-white;
-  background-color: transparent;
-  border: 1px solid $color-white;
-  &:hover {
-    color: $color-black;
-    background-color: $color-gold;
-    border: 1px solid $color-gold;
-  }
-}
-.btn-third {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: $color-gold;
-  background-color: transparent;
-  border: 1px solid $color-gold;
-  &:hover {
-    color: $color-black;
-    background-color: $color-gold;
-    border: 1px solid $color-gold;
-  }
-}
-
 
 /** error **/
 .error {
@@ -100,7 +57,6 @@ input:-webkit-autofill:active  {
   }
 }
 
-
 /** about **/
 .about {
   display: flex;
@@ -123,43 +79,12 @@ input:-webkit-autofill:active  {
       width: 70%;
       padding: 50px 30px;
       background: rgba(0,0,0,0.5);
-      h2 {
-        margin: 0 0 30px;
-        color: $color-white;
-        font-size: 40px;
-        font-weight: bold;
-        text-transform: uppercase;
-        span {
-          color: $color-gold;
-        }
-      }
       p {
         color: $color-grey;
         font-size: 16px;
         line-height: 30px;
       }
-    }
-  }
-}
-
-
-/** home menu **/
-.h-menu {
-  padding: 100px 20px;
-  background-color: $bg-black;
-  .h-menu-container {
-    display: flex;
-    align-items: center;
-    column-gap: 60px;
-    margin: 0 auto;
-    max-width: 1140px;
-    width: 100%;
-    .h-menu-content {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      width: 50%;
-      h2 {
+      .title {
         margin: 0 0 30px;
         color: $color-white;
         font-size: 40px;
@@ -169,6 +94,22 @@ input:-webkit-autofill:active  {
           color: $color-gold;
         }
       }
+    }
+  }
+}
+
+/** home menu **/
+.h-menu {
+  background-color: $bg-black;
+  .h-menu-container {
+    display: flex;
+    align-items: center;
+    column-gap: 60px;
+    .h-menu-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      width: 50%;
       p {
         color: $color-grey;
         font-size: 16px;
@@ -179,6 +120,16 @@ input:-webkit-autofill:active  {
         width: 120px;
         height: 50px;
         font-size: 13px;
+      }
+      .title {
+        margin: 0 0 30px;
+        color: $color-white;
+        font-size: 40px;
+        font-weight: bold;
+        text-transform: uppercase;
+        span {
+          color: $color-gold;
+        }
       }
     }
     .h-menu-list {
@@ -200,17 +151,12 @@ input:-webkit-autofill:active  {
   }
 }
 
-
 /** menu **/
 .menu {
-  padding: 100px 20px;
   .menu-container {
-    margin: 0 auto;
-    max-width: 1140px;
-    width: 100%;
     .menu-heading {
       text-align: center;
-      h2 {
+      .title {
         margin-bottom: 40px;
         color: $color-white;
         font-size: 40px;
@@ -233,39 +179,39 @@ input:-webkit-autofill:active  {
       .menu-block {
         margin-bottom: 70px;
         width: calc(33% - 30px);
-      }
-      h3 {
-        margin-bottom: 20px;
-        color: $color-white;
-        font-size: 18px;
-        font-weight: bold;
-        text-align: center;
-      }
-      button {
-        margin: 30px auto 0;
-        padding: 10px;
-        font-size: 13px;
-      }
-      .description {
-        margin-bottom: 30px;
-        min-height: 100px;
-        color: $color-grey;
-        font-size: 14px;
-        line-height: 24px;
-        text-align: center;
-      }
-      .photo {
-        margin-bottom: 30px;
-        width: 100%;
-        height: 250px;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-      }
-      .price {
-        color: $color-white;
-        font-size: 20px;
-        text-align: center;
+        .title {
+          margin-bottom: 20px;
+          color: $color-white;
+          font-size: 18px;
+          font-weight: bold;
+          text-align: center;
+        }
+        button {
+          margin: 30px auto 0;
+          padding: 10px;
+          font-size: 13px;
+        }
+        .description {
+          margin-bottom: 30px;
+          min-height: 100px;
+          color: $color-grey;
+          font-size: 14px;
+          line-height: 24px;
+          text-align: center;
+        }
+        .photo {
+          margin-bottom: 30px;
+          width: 100%;
+          height: 250px;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
+        }
+        .price {
+          color: $color-white;
+          font-size: 20px;
+          text-align: center;
+        }
       }
     }
   }
@@ -273,14 +219,10 @@ input:-webkit-autofill:active  {
 
 /** service **/
 .service {
-  padding: 100px 20px;
   background-color: $color-gold;
   .service-container {
     display: flex;
     column-gap: 50px;
-    margin: 0 auto;
-    max-width: 1140px;
-    width: 100%;
     .service-item {
       text-align: center;
       .service-icon {
@@ -296,43 +238,38 @@ input:-webkit-autofill:active  {
           font-size: 50px;
         }
       }
-      h2 {
-        margin: 0 0 25px;
-        font-size: 18px;
-        font-weight: 500;
-        text-transform: uppercase;
-      }
       p {
         color: $color-black-light;
         font-size: 16px;
         line-height: 30px;
       }
+      .title {
+        margin: 0 0 25px;
+        font-size: 18px;
+        font-weight: 500;
+        text-transform: uppercase;
+      }
     }
   }
 }
 
-
 /** blog **/
 .blog {
-  padding: 100px 20px;
   .blog-container {
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
-    max-width: 1140px;
-    width: 100%;
     .blog-heading {
       text-align: center;
-      h2 {
+      p {
+        color: $color-grey;
+        font-size: 15px;
+      }
+      .title {
         margin-bottom: 40px;
         color: $color-white;
         font-size: 40px;
         font-weight: bold;
         text-transform: uppercase;
-      }
-      p {
-        color: $color-grey;
-        font-size: 15px;
       }
     }
     .blog-list {
@@ -343,19 +280,9 @@ input:-webkit-autofill:active  {
         flex-wrap: wrap;
         justify-content: space-between;
       }
-      .block-item {
+      .block-item-page {
         margin-bottom: 70px;
         width: calc(50% - 40px);
-      }
-      h3 {
-        margin-bottom: 20px;
-        font-size: 18px;
-        a {
-          color: $color-white;
-          &:hover {
-            color: $color-gold;
-          }
-        }
       }
       p {
         margin-bottom: 15px;
@@ -373,6 +300,16 @@ input:-webkit-autofill:active  {
           color: $color-gold-dark;
         }
       }
+      .item-title {
+        margin-bottom: 20px;
+        font-size: 18px;
+        a {
+          color: $color-white;
+          &:hover {
+            color: $color-gold;
+          }
+        }
+      }
       .photo {
         margin-bottom: 30px;
         width: 100%;
@@ -385,23 +322,12 @@ input:-webkit-autofill:active  {
   }
 }
 
-
 /** single blog **/
 .blog-single {
-  padding: 100px 20px;
   .blog-single-container {
     display: flex;
-    margin: 0 auto;
-    max-width: 1140px;
-    width: 100%;
     .block-single-content {
       width: 65%;
-      h2 {
-        margin-bottom: 30px;
-        color: $color-white;
-        font-size: 32px;
-        font-weight: bold;
-      }
       p {
         margin-bottom: 10px;
         color: $color-grey;
@@ -426,11 +352,17 @@ input:-webkit-autofill:active  {
         max-width: 100%;
         width: 100%;
       }
+      .title {
+        margin-bottom: 30px;
+        color: $color-white;
+        font-size: 32px;
+        font-weight: bold;
+      }
     }
     .block-single-other {
       padding-left: 60px;
       width: 35%;
-      h3 {
+      .title {
         margin-bottom: 30px;
         color: $color-white;
         font-size: 24px;
@@ -487,15 +419,12 @@ input:-webkit-autofill:active  {
   }
 }
 
-
 /** contact **/
 .contact {
   padding: 100px 20px;
   .contact-container {
     display: flex;
-    margin: 0 auto;
-    max-width: 1140px;
-    width: 100%;
+    column-gap: 40px;
     .contact-content {
       width: 50%;
       h2 {
@@ -539,7 +468,6 @@ input:-webkit-autofill:active  {
   }
 }
 
-
 /** sign in **/ 
 .sign-in {
   display: flex;
@@ -566,7 +494,7 @@ input:-webkit-autofill:active  {
   }
   .sign-in-card {
     position: absolute;
-    padding: 80px 50px;
+    padding: 50px;
     max-width: 400px;
     width: 100%;
     border: 1px solid $color-gold;
@@ -587,14 +515,14 @@ input:-webkit-autofill:active  {
       display: flex;
       flex-direction: column;
       row-gap: 30px;
-      margin-top: 50px;
+      margin-top: 40px;
       .form-box {
         width: 100%;
         label {
           display: block;
-          margin-bottom: 15px;
+          margin-bottom: 5px;
           color: $color-gold;
-          font-size: 16px;;
+          font-size: 16px;
         }
         input {
           padding: 10px 0;
@@ -626,6 +554,14 @@ input:-webkit-autofill:active  {
       color: $color-white;
       font-size: 40px;
     }
+    .avatar {
+      display: block;
+      margin: 40px auto 20px;
+      width: 80px;
+      height: 80px;
+      border: 2px solid $color-gold;
+      border-radius: 50%;
+    }
     .btn-back {
       display: block;
       margin: 40px auto 0;
@@ -636,4 +572,3 @@ input:-webkit-autofill:active  {
     }
   }
 }
-

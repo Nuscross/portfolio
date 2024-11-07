@@ -38,10 +38,10 @@ const MenuList = () => {
   };
 
   return (
-    <div className="menu" ref={menuRef}>
-      <div className="menu-container">
+    <div className="section-container menu" ref={menuRef}>
+      <div className="content-container menu-container">
         <div className="menu-heading">
-          <h2>
+          <h2 className="title">
             <span>Discover</span> Our Menu
           </h2>
           <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
@@ -52,7 +52,7 @@ const MenuList = () => {
             return (
               <div key={id} className="menu-block">
                 <div className="photo" style={{ backgroundImage: `url(${image})`}}></div>
-                <h3>{title}</h3>
+                <h3 className="title">{title}</h3>
                 <p className="description">{description}</p>
                 <p className="price">50 ฿</p>
                 <button type="button" className="btn-third">Add to Cart</button> 

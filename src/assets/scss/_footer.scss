@@ -3,13 +3,11 @@ $color-gold: #c49b63;
 $color-grey: #808080;
 $bg-black: #120f0f;
 
+/******************************/
+
 .footer {
-  padding: 100px 20px;
   background-color: $bg-black;
   .footer-container {
-    margin: 0 auto;
-    max-width: 1140px;
-    width: 100%;
     .footer-content {
       display: flex;
       column-gap: 40px;

@@ -1,0 +1,342 @@
+$bg-black: #120f0f;
+$color-gold-dark: #674C2A;
+
+/******************************/
+
+@media only screen and (max-width: 991px) {
+
+  .section-container {
+    padding: 50px 20px;
+  }
+  .footer {
+    .footer-container {
+      .footer-content { 
+        .ft-about, .ft-question {
+          width: 50%;
+        }
+        .ft-blog {
+          display: none;
+        }
+      }
+    }
+  }
+  .about {
+    display: block;
+    height: auto;
+    .about-photo {
+      width: 100%;
+      height: 400px;
+    }
+    .about-content {
+      width: 100%;
+      padding: 20px;
+      .box-content {
+        position: static;
+        left: 0;
+        width: 100%;
+        .title {
+          text-align: center;
+        }
+      }
+    }
+  }
+  .h-menu {
+    .h-menu-container {
+      flex-direction: column;
+      column-gap: 0;
+      .h-menu-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        p {
+          text-align: center;
+        }
+      }
+      .h-menu-list {
+        margin-top: 50px;
+        width: 100%;
+        justify-content: center;
+        .h-menu-photo {
+          width: 150px;
+          &:nth-child(even) {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+  }
+  menu {
+    padding: 50px 20px;
+  }
+  .blog {
+    .blog-container {
+      .blog-list {
+        flex-wrap: wrap;
+        margin-top: 0;
+        &.list-page {
+          margin-bottom: 30px;
+          .block-item-page {
+            margin-top: 50px;
+            margin-bottom: 0;
+            width: calc(50% - 20px);
+          }
+        }
+        .block-item {
+          margin-top: 50px;
+          width: calc(50% - 20px);
+        }
+      }
+    }
+  }
+  .blog-single {
+    padding: 50px 20px;
+    .blog-single-container {
+      .block-single-content {
+        width: 100%;
+      }
+      .block-single-other {
+        display: none;
+      }
+    }
+  }
+
+}
+
+
+@media only screen and (max-width: 767px) {
+
+  .header {
+    display: none;
+  }
+  .footer {
+    .footer-container {
+      .footer-content { 
+        flex-direction: column;
+        row-gap: 50px;
+        .ft-about, .ft-question {
+          width: 100%;
+          .ft-title {
+            margin-bottom: 20px;
+          }
+        }
+        .ft-about {
+          .social-link {
+            margin-top: 20px;
+          }
+        }
+        .ft-question {
+          .ft-media + .ft-media {
+            margin-top: 15px;
+          }
+        }
+      }
+      .copy {
+        margin-top: 50px;
+      }
+    }
+  }
+  .error {
+    display: block;
+    padding: 20px;
+    text-align: center;
+    p {
+      font-size: 16px;
+    }
+    .title {
+      font-size: 80px;
+    }
+    .sub-title {
+      margin-bottom: 20px;
+      font-size: 30px;
+    }
+    .btn-back {
+      display: inline-block;
+      margin-top: 30px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  .slider-container {
+    .slider-content {
+      padding: 0 20px;
+      width: calc(100% - 20px);
+      p {
+        font-size: 16px;
+      }
+      .title {
+        margin: 0 0 10px;
+        font-size: 30px;
+      }
+      .sub-title {
+        margin-bottom: 5px;
+        font-size: 20px;
+      }
+      .slider-button {
+        display: none;
+      }
+    }
+    .slider-item {
+      height: 500px;
+    }
+  }
+  .about {
+    .about-photo {
+      height: 300px;
+    }
+    .about-content {
+      .box-content {
+        .title {
+          font-size: 30px;
+        }
+      }
+    }
+  }
+  .h-menu {
+    .h-menu-container {
+      .h-menu-content {
+        .title {
+          font-size: 30px;
+        }
+      }
+      .h-menu-list {
+        display: none;
+      }
+    }
+  }
+  .menu {
+    .menu-container {
+      .menu-heading {
+        .title {
+          font-size: 30px;
+        }
+      }
+      .menu-list {
+        column-gap: 40px;
+        margin-top: 30px;
+        .menu-block {
+          width: calc(50% - 20px);
+        }
+      }
+    }
+  }
+  .service {
+    .service-container {
+      flex-direction: column;
+      column-gap: 0;
+      row-gap: 50px;
+      .service-item {
+        .service-icon {
+          margin-bottom: 20px;
+        }
+        .title {
+          margin: 0 0 10px;
+        }
+      }
+    }
+  }
+  .blog {
+    .blog-container {
+      .blog-heading {
+        .title {
+          font-size: 30px;
+        }
+      }
+      .blog-list {
+        flex-direction: column;
+        &.list-page {
+          .block-item-page {
+            width: 100%;
+          }
+        }
+        .block-item {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .blog-single {
+    .blog-single-container {
+      .block-single-content {
+        .title {
+          font-size: 28px;
+        }
+      }
+    }
+  }
+  .contact {
+    .contact-container {
+      flex-direction: column;
+      column-gap: 0;
+      row-gap: 50px;
+      .contact-content {
+        width: 100%;
+      }
+      .contact-form {
+        padding-top: 40px;
+        width: 100%;
+        border-top: 1px solid $color-gold-dark;
+      }
+    }
+  }
+  .sign-in {
+    display: block;
+    padding: 30px 20px;
+    background-color: $bg-black;
+    background-image: none;
+    &.admin {
+      background-color: $bg-black;
+      background-image: none;
+    }
+    .sign-in-overlay {
+      display: none;
+    }
+    .sign-in-card {
+      position: relative;
+      margin: 0 auto;
+      padding: 40px 20px;
+      h1 {
+        font-size: 28px;
+      }
+      form {
+        row-gap: 20px;
+        margin-top: 30px;
+      }
+    }
+    .admin-content {
+      position: relative;
+      p {
+        font-size: 16px;
+      }
+      .title {
+        font-size: 30px;
+      }
+      .avatar {
+        margin: 20px auto;
+      }
+      .btn-back {
+        margin: 30px auto 0;
+      }
+    }
+  }
+
+}
+
+
+@media only screen and (max-width: 480px) {
+  
+  .menu {
+    .menu-container {
+      .menu-list {
+        column-gap: 0;
+        .menu-block {
+          width: 100%;
+          .description {
+            min-height: auto;
+          }
+        }
+      }
+    }
+  }
+
+}

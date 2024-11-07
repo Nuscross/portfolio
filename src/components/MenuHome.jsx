@@ -23,10 +23,10 @@ const MenuHome = () => {
   },[])
 
   return (
-    <div className="h-menu">
-      <div className="h-menu-container">
+    <div className="section-container h-menu">
+      <div className="content-container h-menu-container">
         <div className="h-menu-content">
-          <h2>
+          <h2 className="title">
             <span>Our</span> Menu
           </h2>
           <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>

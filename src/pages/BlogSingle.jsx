@@ -31,10 +31,10 @@ const BlogSingle = () => {
   return (
     <>
       <HeroPage title={singleBlog.title} />
-      <div className="blog-single">   
-        <div className="blog-single-container">
+      <div className="section-container blog-single">   
+        <div className="content-container blog-single-container">
           <div className="block-single-content">
-            <h2>{singleBlog.title}</h2>
+            <h2 className="title">{singleBlog.title}</h2>
             <small>
               <FaClock />
               {singleBlog.postDate}
@@ -43,7 +43,7 @@ const BlogSingle = () => {
             <p>{singleBlog.description}</p>
           </div>
           <div className="block-single-other">
-            <h3>Other Article</h3>
+            <h3 className="title">Other Article</h3>
             { blogOther.map((otherBlog) => {
               const { id, title, shortDescription, image, postDate } = otherBlog;
               return (

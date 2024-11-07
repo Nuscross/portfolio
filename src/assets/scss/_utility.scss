@@ -1,0 +1,62 @@
+$color-black: #000000;
+$color-white: #ffffff;
+$color-gold: #c49b63;
+$color-error: rgb(248 113 113);
+
+/******************************/
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+  transition: background-color 5000s;
+  -webkit-text-fill-color: $color-white !important;
+}
+.pb-30 {
+  padding-bottom: 30px !important;
+}
+.font-14 {
+  font-size: 14px !important;
+}
+.validate-error {
+  padding: 0 15px;
+  color: $color-error;
+}
+.btn-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $color-black;
+  background-color: $color-gold;
+  border: 1px solid $color-gold;
+  &:hover {
+    color: $color-gold;
+    background-color: transparent;
+  }
+}
+.btn-secondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $color-white;
+  background-color: transparent;
+  border: 1px solid $color-white;
+  &:hover {
+    color: $color-black;
+    background-color: $color-gold;
+    border: 1px solid $color-gold;
+  }
+}
+.btn-third {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $color-gold;
+  background-color: transparent;
+  border: 1px solid $color-gold;
+  &:hover {
+    color: $color-black;
+    background-color: $color-gold;
+    border: 1px solid $color-gold;
+  }
+}

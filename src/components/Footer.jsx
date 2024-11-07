@@ -14,8 +14,8 @@ const Footer = () => {
   },[])
 
   return (
-    <footer className="footer">
-      <div className="footer-container">
+    <footer className="section-container footer">
+      <div className="content-container footer-container">
         <div className="footer-content">
           <div className="ft-about">
             <div className="ft-title">About Us</div>
