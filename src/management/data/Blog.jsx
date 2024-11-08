@@ -4,7 +4,7 @@ export const BlogData = [
     title: 'Spaghetti Aglio e Olio',
     shortDescription: 'A small river named Duden flows by their place and supplies it with the necessary regelialia.',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, eius mollitia suscipit, quisquam doloremque distinctio perferendis et doloribus unde architecto optio laboriosam porro adipisci sapiente officiis nemo accusamus ad praesentium? Esse minima nisi et. Dolore perferendis, enim praesentium omnis, iste doloremque quia officia optio deserunt molestiae voluptates soluta architecto tempora. Molestiae cupiditate inventore animi, maxime sapiente optio, illo est nemo veritatis repellat sunt doloribus nesciunt! Minima laborum magni reiciendis qui voluptate quisquam voluptatem soluta illo eum ullam incidunt rem assumenda eveniet eaque sequi deleniti tenetur dolore amet fugit perspiciatis ipsa, odit. Nesciunt dolor minima esse vero ut ea, repudiandae suscipit!',
-    image: '/src/images/image_1.jpg',
+    image: '/src/assets/images/image_1.jpg',
     postDate: 'Sept 28, 2018',
   },
   {
@@ -12,7 +12,7 @@ export const BlogData = [
     title: 'Penne Arabiatta',
     shortDescription: 'A small river named Duden flows by their place and supplies it with the necessary regelialia.',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, eius mollitia suscipit, quisquam doloremque distinctio perferendis et doloribus unde architecto optio laboriosam porro adipisci sapiente officiis nemo accusamus ad praesentium? Esse minima nisi et. Dolore perferendis, enim praesentium omnis, iste doloremque quia officia optio deserunt molestiae voluptates soluta architecto tempora. Molestiae cupiditate inventore animi, maxime sapiente optio, illo est nemo veritatis repellat sunt doloribus nesciunt! Minima laborum magni reiciendis qui voluptate quisquam voluptatem soluta illo eum ullam incidunt rem assumenda eveniet eaque sequi deleniti tenetur dolore amet fugit perspiciatis ipsa, odit. Nesciunt dolor minima esse vero ut ea, repudiandae suscipit!',
-    image: '/src/images/image_2.jpg',
+    image: '/src/assets/images/image_2.jpg',
     postDate: 'Sept 28, 2018',
   },
   {
@@ -20,7 +20,7 @@ export const BlogData = [
     title: 'Pizza Vegetable',
     shortDescription: 'A small river named Duden flows by their place and supplies it with the necessary regelialia.',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, eius mollitia suscipit, quisquam doloremque distinctio perferendis et doloribus unde architecto optio laboriosam porro adipisci sapiente officiis nemo accusamus ad praesentium? Esse minima nisi et. Dolore perferendis, enim praesentium omnis, iste doloremque quia officia optio deserunt molestiae voluptates soluta architecto tempora. Molestiae cupiditate inventore animi, maxime sapiente optio, illo est nemo veritatis repellat sunt doloribus nesciunt! Minima laborum magni reiciendis qui voluptate quisquam voluptatem soluta illo eum ullam incidunt rem assumenda eveniet eaque sequi deleniti tenetur dolore amet fugit perspiciatis ipsa, odit. Nesciunt dolor minima esse vero ut ea, repudiandae suscipit!',
-    image: '/src/images/image_3.jpg',
+    image: '/src/assets/images/image_3.jpg',
     postDate: 'Sept 28, 2018',
   },
   {
@@ -28,7 +28,7 @@ export const BlogData = [
     title: 'Greek Salad ',
     shortDescription: 'A small river named Duden flows by their place and supplies it with the necessary regelialia.',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, eius mollitia suscipit, quisquam doloremque distinctio perferendis et doloribus unde architecto optio laboriosam porro adipisci sapiente officiis nemo accusamus ad praesentium? Esse minima nisi et. Dolore perferendis, enim praesentium omnis, iste doloremque quia officia optio deserunt molestiae voluptates soluta architecto tempora. Molestiae cupiditate inventore animi, maxime sapiente optio, illo est nemo veritatis repellat sunt doloribus nesciunt! Minima laborum magni reiciendis qui voluptate quisquam voluptatem soluta illo eum ullam incidunt rem assumenda eveniet eaque sequi deleniti tenetur dolore amet fugit perspiciatis ipsa, odit. Nesciunt dolor minima esse vero ut ea, repudiandae suscipit!',
-    image: '/src/images/image_4.jpg',
+    image: '/src/assets/images/image_4.jpg',
     postDate: 'Sept 28, 2018',
   },
   {
@@ -36,7 +36,7 @@ export const BlogData = [
     title: 'Pizza Chicken Tikka',
     shortDescription: 'A small river named Duden flows by their place and supplies it with the necessary regelialia.',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, eius mollitia suscipit, quisquam doloremque distinctio perferendis et doloribus unde architecto optio laboriosam porro adipisci sapiente officiis nemo accusamus ad praesentium? Esse minima nisi et. Dolore perferendis, enim praesentium omnis, iste doloremque quia officia optio deserunt molestiae voluptates soluta architecto tempora. Molestiae cupiditate inventore animi, maxime sapiente optio, illo est nemo veritatis repellat sunt doloribus nesciunt! Minima laborum magni reiciendis qui voluptate quisquam voluptatem soluta illo eum ullam incidunt rem assumenda eveniet eaque sequi deleniti tenetur dolore amet fugit perspiciatis ipsa, odit. Nesciunt dolor minima esse vero ut ea, repudiandae suscipit!',
-    image: '/src/images/image_5.jpg',
+    image: '/src/assets/images/image_5.jpg',
     postDate: 'Sept 28, 2018',
   },
   {
@@ -44,7 +44,7 @@ export const BlogData = [
     title: 'Pizza Erotica',
     shortDescription: 'A small river named Duden flows by their place and supplies it with the necessary regelialia.',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, eius mollitia suscipit, quisquam doloremque distinctio perferendis et doloribus unde architecto optio laboriosam porro adipisci sapiente officiis nemo accusamus ad praesentium? Esse minima nisi et. Dolore perferendis, enim praesentium omnis, iste doloremque quia officia optio deserunt molestiae voluptates soluta architecto tempora. Molestiae cupiditate inventore animi, maxime sapiente optio, illo est nemo veritatis repellat sunt doloribus nesciunt! Minima laborum magni reiciendis qui voluptate quisquam voluptatem soluta illo eum ullam incidunt rem assumenda eveniet eaque sequi deleniti tenetur dolore amet fugit perspiciatis ipsa, odit. Nesciunt dolor minima esse vero ut ea, repudiandae suscipit!',
-    image: '/src/images/image_6.jpg',
+    image: '/src/assets/images/image_6.jpg',
     postDate: 'Sept 28, 2018',
   },
 ]

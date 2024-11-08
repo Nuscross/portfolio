@@ -100,6 +100,17 @@ $color-gold-dark: #674C2A;
       }
     }
   }
+  .cart, .order {
+    .cart-table, .order-table {
+      tr {
+        td {
+          .product-total {
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
 
 }
 
@@ -107,7 +118,14 @@ $color-gold-dark: #674C2A;
 @media only screen and (max-width: 767px) {
 
   .header {
-    display: none;
+    .header-container {
+      .menu-hamburger {
+        display: block;
+      }
+      .nav-menu {
+        display: none;
+      }
+    }
   }
   .footer {
     .footer-container {
@@ -336,6 +354,13 @@ $color-gold-dark: #674C2A;
           }
         }
       }
+    }
+  }
+  .cart {
+    .cart-button {
+      flex-direction: column;
+      column-gap: 0;
+      row-gap: 20px;
     }
   }
 

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { BlogData } from "../data/Blog";
+import { BlogData } from "../management/data/Blog";
 import HeroSlider from "../components/HeroSlider";
 import AboutContent from "../components/AboutContent";
 import ServiceContent from "../components/ServiceContent";

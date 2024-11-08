@@ -1,26 +1,23 @@
 import { useState, useEffect } from "react";
+import { useGlobalContext } from "../management/context";
 import { Link } from "react-router-dom";
 
 const MenuHome = () => {
 
+  const { menuData } = useGlobalContext();
+
   const [menuPhoto,setMenuPhoto] = useState([]);
 
-  const fetchData = async () => {
-    try {
-      const response = await fetch('https://api.sampleapis.com/coffee/hot');
-      const data = await response.json();
-      
-      const menuPhotoFilter = data.filter((item) => item.id >= 14 && item.id <= 17);
-      setMenuPhoto(menuPhotoFilter);
-    } 
-    catch (error) {
-      console.log(error.message);
+  useEffect(() => {
+    if (menuData && menuData.length > 0) {
+      filterMenuPhoto();
     }
-  }
+  }, [menuData]);
 
-  useEffect(()=>{
-    fetchData();
-  },[])
+  const filterMenuPhoto = () => {
+    const menuPhotoFilter = menuData.filter((item) => item.id >= 14 && item.id <= 17);
+    setMenuPhoto(menuPhotoFilter);
+  }
 
   return (
     <div className="section-container h-menu">

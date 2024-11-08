@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, useEffect } from "react";
+import { getMenuList } from "../management/api";
 
 const appContext = createContext(); 
 
@@ -7,14 +8,13 @@ export const AppProvider = ({ children }) => {
   const [menuData,setMenuData] = useState([]);
 
   useEffect(()=>{
-    fetchData();
-  },[])
+    fetchMenu();
+  },[]);
 
-  const fetchData = async () => {
+  const fetchMenu = async () => {
     try {
-      const response = await fetch('https://api.sampleapis.com/coffee/hot');
-      const data = await response.json();
-      setMenuData(data);
+      const menuListData = await getMenuList();
+      setMenuData(menuListData);
     } 
     catch (error) {
       console.log(error.message);

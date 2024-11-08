@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { BlogData } from "../data/Blog";
+import { BlogData } from "../management/data/Blog";
 import { FaFacebook, FaInstagramSquare, FaTwitter } from "react-icons/fa";
 import { FaLocationDot, FaPhone, FaEnvelope } from "react-icons/fa6"
 

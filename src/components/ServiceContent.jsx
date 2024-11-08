@@ -1,4 +1,4 @@
-import { ServiceData } from "../data/Service";
+import { ServiceData } from "../management/data/Service";
 
 const ServiceContent = () => {
 

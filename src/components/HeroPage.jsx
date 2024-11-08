@@ -1,4 +1,4 @@
-import image from "../images/bg_3.jpg";
+import image from "../assets/images/bg_3.jpg";
 
 const HeroPage = ({title}) => {
 

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useLoaderData, Navigate, Link } from "react-router-dom";
-import { BlogData } from "../data/Blog";
+import { BlogData } from "../management/data/Blog";
 import { FaClock } from "react-icons/fa6";
 import HeroPage from "../components/HeroPage";
 

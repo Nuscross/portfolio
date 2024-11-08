@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { sliderImage } from "../data/Slider.jsx";
+import { sliderImage } from "../management/data/Slider.jsx";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";

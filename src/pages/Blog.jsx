@@ -1,6 +1,6 @@
 import HeroPage from "../components/HeroPage";
 import BlogList from "../components/BlogList";
-import { BlogData } from "../data/Blog";
+import { BlogData } from "../management/data/Blog";
 
 const Blog = () => {
 

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { getAdmin } from "../management/api";
 
 const Admin = () => {
 
@@ -7,21 +8,14 @@ const Admin = () => {
 
   const [adminUser,setAdminUser] = useState([]);
 
-  const fetchUser = async () => {
-    return fetch("https://dummyjson.com/auth/me",{
-      method: 'GET',
-      headers: {
-        'Authorization': `Bearer ${token}`
-      },
-    })
-    .then(response => response.json())
-    .then(result => setAdminUser(result))
-    .catch(error => console.error('error', error))
-  } 
-
   useEffect(()=>{
-    fetchUser();
+    fetchAdmin();
   },[])
+
+  const fetchAdmin = async () => {
+    const dataResponse = await getAdmin(token);
+    setAdminUser(dataResponse);
+  } 
 
   const handleLogout = () => {
     localStorage.removeItem('accessToken');

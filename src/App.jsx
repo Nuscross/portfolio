@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider }  from "react-router-dom";
-import { Layout, Home, Menu, Services, Blog, BlogSingle, About, Contact, Cart, Error, SignIn, Admin } from "./pages/index";
+import { Layout, Home, Menu, Services, Blog, BlogSingle, About, Contact, Cart, Error, SignIn, Admin, OrderHistory } from "./pages/index";
 import { loader as singleBlogLoader } from "./pages/BlogSingle";
 
 const router = createBrowserRouter(
@@ -48,6 +48,11 @@ const router = createBrowserRouter(
         {
           path: "/cart",
           element: <Cart />,
+          errorElement: <Error />,
+        },
+        {
+          path: "/order-history",
+          element: <OrderHistory />,
           errorElement: <Error />,
         },
       ]

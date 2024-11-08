@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
+import { postLogin } from "../management/api";
 
 const SignIn = () => {
 
@@ -11,23 +12,12 @@ const SignIn = () => {
   const [errors, setErrors] = useState({});
 
   const loginSystem = async (credentials) => {
-    return fetch("https://dummyjson.com/auth/login",{
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(credentials)
-    })
-    .then(response => response.json())
-    .catch(error => console.error('error', error))
+    const dataResponse = await postLogin(credentials);
+    return dataResponse;
   } 
 
   const validateForm = () => {
     const newErrors = {};
-
-    console.log(signInInputs.username);
-    console.log(signInInputs.password);
-
     if (!signInInputs.username) {
       newErrors.username = "* Your username is required.";
     }
@@ -35,11 +25,7 @@ const SignIn = () => {
     {
       newErrors.password = "* Your password is required.";
     }
-
-    console.log(newErrors);
-
     setErrors(newErrors);
-
     return Object.keys(newErrors).length === 0;
   }
 
