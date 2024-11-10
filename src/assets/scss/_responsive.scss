@@ -345,6 +345,11 @@ $color-gold-dark: #674C2A;
   
   .menu {
     .menu-container {
+      .menu-category {
+        flex-direction: column;
+        column-gap: 0;
+        row-gap: 20px;
+      }
       .menu-list {
         column-gap: 0;
         .menu-block {

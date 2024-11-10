@@ -1,12 +1,17 @@
 import { useState, useEffect } from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigation } from "react-router-dom";
+import Loading from "../components/Loading";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import MobileNavigation from "../components/MobileNavigation";
 
 const Layout = () => {
 
+  const navigation = useNavigation();
+
   const [isToggle,setIsToggle] = useState(false);
+  
+  const isPageLoading = navigation.state === 'loading';
 
   useEffect(() => {
     if (isToggle) {
@@ -25,10 +30,15 @@ const Layout = () => {
 
   return (
     <>
-      <MobileNavigation isToggle={isToggle} toggleMenu={toggleMenu} />
-      <Header toggleMenu={toggleMenu} />
-      <Outlet />
-      <Footer />
+      {
+        isPageLoading ? <Loading /> : 
+        <>
+          <MobileNavigation isToggle={isToggle} toggleMenu={toggleMenu} />
+          <Header toggleMenu={toggleMenu} />
+          <Outlet />
+          <Footer />
+        </>
+      }
     </>
   )
 

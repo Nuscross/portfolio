@@ -60,3 +60,25 @@ input:-webkit-autofill:active  {
     border: 1px solid $color-gold;
   }
 }
+.loading-content {
+  margin: 0 auto;
+  width: 80px;
+}
+.loader {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  border: 5px solid $color-gold;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+0% {
+    transform: rotate(0deg);
+}
+100% {
+    transform: rotate(360deg);
+}
+} 

@@ -1,8 +1,11 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { postLogin } from "../management/api";
 
 const SignIn = () => {
+
+  const navigate = useNavigate();
 
   const [signInInputs, setSignInInputs] = useState({
     username: '',
@@ -44,7 +47,7 @@ const SignIn = () => {
       })
       if ('accessToken' in result) {
         localStorage.setItem('accessToken', result.accessToken);
-        window.location.href = "/admin";
+        navigate("/admin");
       }
       else {
         toast.error("Invalid username or password.");

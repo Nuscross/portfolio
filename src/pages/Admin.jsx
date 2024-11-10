@@ -1,12 +1,22 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { getAdmin } from "../management/api";
 
 const Admin = () => {
 
   const token = localStorage.getItem('accessToken');
 
+  const navigate = useNavigate();
+
   const [adminUser,setAdminUser] = useState([]);
+
+  useEffect(() => {
+    if (!token) {
+      navigate("/sign-in");
+    } else {
+      fetchAdmin();
+    }
+  }, [token, navigate]);
 
   useEffect(()=>{
     fetchAdmin();
@@ -19,7 +29,7 @@ const Admin = () => {
 
   const handleLogout = () => {
     localStorage.removeItem('accessToken');
-    window.location.href = "/sign-in";
+    navigate("/");
   }
 
   const { firstName, lastName, image } = adminUser;

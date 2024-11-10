@@ -21,8 +21,15 @@ export const AppProvider = ({ children }) => {
     }
   }
 
+  const setCategory = new Set(menuData.flatMap(item => item.ingredients));
+  const menuCategory = Array.from(setCategory);
+
+  const formatNumber = (number) => {
+    return number.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+  }
+
   return (
-    <appContext.Provider value={{ menuData }}>
+    <appContext.Provider value={{ menuData, menuCategory, formatNumber }}>
       {children}
     </appContext.Provider>
   )
