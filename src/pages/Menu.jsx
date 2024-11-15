@@ -1,10 +1,14 @@
 import { useState, useEffect, useRef } from "react";
+import { useDispatch } from "react-redux";
 import { useGlobalContext } from "../management/context";
+import { addMenu } from "../management/slice/cartSlice";
 import HeroPage from "../components/HeroPage";
 
 const Menu = () => {
 
-  const { menuData, menuCategory, formatNumber } = useGlobalContext();
+  const dispatch = useDispatch();
+
+  const { menuCart, menuCategory, formatNumber } = useGlobalContext();
 
   const [menuList,setMenuList] = useState([]);
   const [dataInPage,setDataInPage] = useState([]);
@@ -15,24 +19,24 @@ const Menu = () => {
   const menuRef = useRef(null);
 
   useEffect(() => {
-    const filteredData = selectedCategory === "All" ? menuData : menuData.filter((item) => item.ingredients.includes(selectedCategory));
+    const filteredData = selectedCategory === "All" ? menuCart : menuCart.filter((item) => item.ingredients.includes(selectedCategory));
     const paginate = pagination(filteredData);
     setDataInPage(paginate);
     setMenuList(paginate[page] || []);
-  }, [menuData,page,selectedCategory]);
+  }, [menuCart,page,selectedCategory]);
 
   const changeMenuCategory = (categoryValue) => {
     setSelectedCategory(categoryValue);
     setPage(0);
   }
 
-  const pagination = (menuData) => {
+  const pagination = (menuCart) => {
     const coffeePerPage = 6;
-    const pages = Math.ceil(menuData.length / coffeePerPage);
+    const pages = Math.ceil(menuCart.length / coffeePerPage);
     setPageCount(pages);
     const newCoffee = Array.from({length:pages},(data,index)=>{
       const start = index * coffeePerPage;
-      return menuData.slice(start,start + coffeePerPage);
+      return menuCart.slice(start,start + coffeePerPage);
     });
     return newCoffee;
   }
@@ -72,14 +76,21 @@ const Menu = () => {
           <div className="menu-list">
             { menuList ? 
                 menuList.map((item) => {
-                  const { id, image, title, description } = item;
+                  const { id, image, title, description, price } = item;
                   return (
                     <div key={id} className="menu-block">
                       <div className="photo" style={{ backgroundImage: `url(${image})`}}></div>
                       <h3 className="title">{title}</h3>
                       <p className="description">{description}</p>
-                      <p className="price">{ formatNumber(1000) } ฿</p>
-                      <button type="button" className="btn-third">Add to Cart</button> 
+                      <p className="price">{ formatNumber(price) } ฿</p>
+                      <button 
+                        type="button" 
+                        className="btn-third" 
+                        onClick={() => { 
+                          dispatch(addMenu(item));
+                        }}>
+                          Add to Cart
+                      </button> 
                     </div>
                   )
             })

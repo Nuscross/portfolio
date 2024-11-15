@@ -4,18 +4,18 @@ import { Link } from "react-router-dom";
 
 const MenuHome = () => {
 
-  const { menuData } = useGlobalContext();
+  const { menuCart } = useGlobalContext();
 
   const [menuPhoto,setMenuPhoto] = useState([]);
 
   useEffect(() => {
-    if (menuData && menuData.length > 0) {
+    if (menuCart && menuCart.length > 0) {
       filterMenuPhoto();
     }
-  }, [menuData]);
+  }, [menuCart]);
 
   const filterMenuPhoto = () => {
-    const menuPhotoFilter = menuData.filter((item) => item.id >= 14 && item.id <= 17);
+    const menuPhotoFilter = menuCart.filter((item) => item.id >= 14 && item.id <= 17);
     setMenuPhoto(menuPhotoFilter);
   }
 

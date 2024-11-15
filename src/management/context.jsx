@@ -6,11 +6,19 @@ const appContext = createContext();
 export const AppProvider = ({ children }) => {
 
   const [menuData,setMenuData] = useState([]);
+  const [menuCart,setMenuCart] = useState([]);
 
   useEffect(()=>{
     fetchMenu();
   },[]);
 
+  useEffect(() => {
+    if (menuData.length > 0) {
+      updateMenu(menuData);
+    }
+  },[menuData]);
+
+  // fetch menu data 
   const fetchMenu = async () => {
     try {
       const menuListData = await getMenuList();
@@ -21,15 +29,27 @@ export const AppProvider = ({ children }) => {
     }
   }
 
+  // update cart menu
+  const updateMenu = (menuData) => {
+    const menuCartData = menuData.map((menu,index) => ({
+      ...menu,
+      amount: 0,
+      price: 50+(index * 5),
+    }));
+    setMenuCart(menuCartData);
+  }
+
+  // set category
   const setCategory = new Set(menuData.flatMap(item => item.ingredients));
   const menuCategory = Array.from(setCategory);
 
+  // format price number
   const formatNumber = (number) => {
     return number.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
   }
 
   return (
-    <appContext.Provider value={{ menuData, menuCategory, formatNumber }}>
+    <appContext.Provider value={{ menuCart, menuCategory, formatNumber }}>
       {children}
     </appContext.Provider>
   )
