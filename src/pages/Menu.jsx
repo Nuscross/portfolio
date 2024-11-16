@@ -8,7 +8,7 @@ const Menu = () => {
 
   const dispatch = useDispatch();
 
-  const { menuCart, menuCategory, formatNumber } = useGlobalContext();
+  const { menuCart, menuCategory, formatNumber, scrollToDiv } = useGlobalContext();
 
   const [menuList,setMenuList] = useState([]);
   const [dataInPage,setDataInPage] = useState([]);
@@ -44,12 +44,6 @@ const Menu = () => {
   const handlePage = (index) => {
     setPage(index);
   }
-
-  const scrollToMenu = () => {
-    if (menuRef.current) {
-      menuRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  };
   
   return (
     <>
@@ -107,7 +101,7 @@ const Menu = () => {
               className={`page-btn ${page === 0 && 'hidden'}`}
               onClick={()=>{
                 setPage(page - 1);
-                scrollToMenu();
+                scrollToDiv(menuRef);
               }}
               >
               Prev
@@ -119,7 +113,7 @@ const Menu = () => {
                   className={index === page ? 'page-btn active' : 'page-btn'} 
                   onClick={()=>{
                     handlePage(index);
-                    scrollToMenu();
+                    scrollToDiv(menuRef);
                   }}>
                     {index+1}
                 </button>)
@@ -128,7 +122,7 @@ const Menu = () => {
               className={`page-btn ${page === pageCount - 1 && 'hidden'}`}
               onClick={()=>{
                 setPage(page + 1);
-                scrollToMenu();
+                scrollToDiv(menuRef);
               }}
               >
               Next

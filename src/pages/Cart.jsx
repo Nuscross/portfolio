@@ -1,4 +1,3 @@
-import { useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { useGlobalContext } from "../management/context";
@@ -11,22 +10,14 @@ const Cart = () => {
 
   const dispatch = useDispatch();
 
-  const { cartItems, totalPrice } = useSelector((state) => state.cart);
+  const { cartItems, totalPrice, scrollToDiv } = useSelector((state) => state.cart);
 
   const { formatNumber } = useGlobalContext();
-
-  const cartRef = useRef(null);
-
-  const scrollToCart = () => {
-    if (cartRef.current) {
-      cartRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  };
 
   return (
     <>
       <HeroPage title="Shopping Cart" />
-      <div className="section-container cart" ref={cartRef}>
+      <div className="section-container cart">
         <div className="content-container">
           <div style={{ overflowX: "scroll "}}>
             <table className="cart-table">
@@ -101,7 +92,7 @@ const Cart = () => {
               onClick={() => {
                 dispatch(saveOrder({cartItems,totalPrice}));
                 dispatch(clearCart());
-                scrollToCart();
+                window.scrollTo(0, 0);
               }}    
             >
               Save Order

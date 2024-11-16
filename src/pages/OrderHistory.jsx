@@ -1,4 +1,3 @@
-import { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useGlobalContext } from "../management/context";
 import { clearOrder } from "../management/slice/orderSlice";
@@ -11,20 +10,12 @@ const OrderHistory = () => {
 
   const { orderItems } = useSelector((state) => state.order);
 
-  const { formatNumber } = useGlobalContext();
-
-  const orderRef = useRef(null);
-
-  const scrollToOrder = () => {
-    if (orderRef.current) {
-      orderRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  };
+  const { formatNumber, scrollToDiv } = useGlobalContext();
 
   return (
     <>
       <HeroPage title="Order History" />
-      <div className="section-container order" ef={orderRef}>
+      <div className="section-container order" >
         <div className="content-container">
           <div style={{ overflowX: "scroll "}}>
             { orderItems.length > 0 ? 
@@ -96,7 +87,7 @@ const OrderHistory = () => {
                 className="btn-cart btn-primary" 
                 onClick={() => {
                   dispatch(clearOrder());
-                  scrollToOrder();
+                  window.scrollTo(0, 0);
                 }}
               >
                 Clear Order

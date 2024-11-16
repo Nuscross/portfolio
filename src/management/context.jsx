@@ -48,8 +48,15 @@ export const AppProvider = ({ children }) => {
     return number.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
   }
 
+  // scroll to div
+  const scrollToDiv = (ref) => {
+    if (ref.current) {
+      ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
-    <appContext.Provider value={{ menuCart, menuCategory, formatNumber }}>
+    <appContext.Provider value={{ menuCart, menuCategory, formatNumber, scrollToDiv }}>
       {children}
     </appContext.Provider>
   )

@@ -1,57 +1,25 @@
-import { useState, useRef } from "react";
+import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import { postContact } from "../management/api";
 import HeroPage from "../components/HeroPage";
 
 const Contact = () => {
 
-  const [contactData, setContactData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
-  const [errors, setErrors] = useState({});
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm();
 
-  const contactFormRef = useRef(null);
-
-  const validateForm = () => {
-    const newErrors = {};
-    if (!contactData.name) {
-      newErrors.name = "* Your name is required.";
-    }
-    if (!contactData.email) 
-    {
-      newErrors.email = "* Your email is required.";
+  const onSubmit = async (data) => {
+    const dataResponse = await postContact(data);
+    if (dataResponse.success) {
+      toast.success(dataResponse.message);
+      reset();
     } 
-    else if (!/\S+@\S+\.\S+/.test(contactData.email)) {
-      newErrors.email = "* Email address is invalid format.";
-    }
-    if (!contactData.message) {
-      newErrors.message = "* Your message is required.";
-    } 
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  }
-
-  const handleChange = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
-    setContactData(values => (
-      {...values, [name]: value}
-    ))
-  }
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    if (validateForm()) {
-      const dataResponse = await postContact(contactData);
-      if (dataResponse.success) {
-        toast.success(dataResponse.message);
-        contactFormRef.current.reset();
-      } 
-      else {
-        toast.error("Something went wrong, please try again.");
-      }
+    else {
+      toast.error("Something went wrong, please try again.");
     }
   }
 
@@ -77,34 +45,42 @@ const Contact = () => {
               </li>
             </ul>
           </div>
-          <form className="contact-form" onSubmit={handleSubmit} ref={contactFormRef}>
+          <form className="contact-form" onSubmit={handleSubmit(onSubmit)}>
             <input
-              type="text" 
+              type="text"
               name="name"
               className="input-form"
               placeholder="Your Name"
-              value={contactData.name}
-              onChange={handleChange}
+              { ...register('name', { required: "* Your name is required." }) }
             />
-            {errors.name && <div className="validate-error">{errors.name}</div>}
-            <input 
-              type="text"
+            { errors.name && 
+              <div className="validate-error">{ errors.name.message }</div> 
+            }
+            <input
+              type="email"
               name="email"
               className="input-form"
               placeholder="Your Email"
-              value={contactData.email}
-              onChange={handleChange}
+              { ...register('email', {
+                required: "* Your email is required.",
+                pattern: {
+                  value: /\S+@\S+\.\S+/,
+                  message: "* Email address is in an invalid format.",
+                },
+              })}
             />
-            {errors.email && <span className="validate-error">{errors.email}</span>}
+            { errors.email && 
+              <span className="validate-error">{ errors.email.message }</span> 
+            }
             <textarea
               name="message"
               className="input-form textarea"
               placeholder="Your Message"
-              value={contactData.message}
-              onChange={handleChange}
-            >
-            </textarea>
-            {errors.message && <span className="validate-error">{errors.message}</span>}
+              { ...register('message', { required: "* Your message is required." }) }
+            />
+            { errors.message && 
+              <span className="validate-error">{ errors.message.message }</span> 
+            }
             <button type="submit" className="btn-primary">Send Message</button>
           </form>
         </div>

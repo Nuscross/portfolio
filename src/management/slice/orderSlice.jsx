@@ -28,10 +28,11 @@ const orderSlice = createSlice({
         total: itemAdd.totalPrice,
         date: orderDate
       });
-      toast.success(`Save Order`);
+      toast.success(`Save order successfully.`);
     },
     clearOrder: (state) => {
       state.orderItems = [];
+      toast.success(`Clear order successfully.`);
     }
   }
 })

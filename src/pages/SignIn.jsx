@@ -1,5 +1,5 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useForm } from 'react-hook-form';
 import { toast } from "react-toastify";
 import { postLogin } from "../management/api";
 
@@ -7,51 +7,25 @@ const SignIn = () => {
 
   const navigate = useNavigate();
 
-  const [signInInputs, setSignInInputs] = useState({
-    username: '',
-    password: '',
-  });
-
-  const [errors, setErrors] = useState({});
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
   const loginSystem = async (credentials) => {
     const dataResponse = await postLogin(credentials);
     return dataResponse;
   } 
 
-  const validateForm = () => {
-    const newErrors = {};
-    if (!signInInputs.username) {
-      newErrors.username = "* Your username is required.";
+  const onSubmit = async (data) => {
+    const result = await loginSystem(data)
+    if ('accessToken' in result) {
+      localStorage.setItem('accessToken', result.accessToken);
+      navigate("/admin");
     }
-    if (!signInInputs.password) 
-    {
-      newErrors.password = "* Your password is required.";
-    }
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  }
-
-  const handleChange = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
-    setSignInInputs(values => ({...values, [name]: value}))
-  }
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    if (validateForm()) {
-      const result = await loginSystem({
-        username: signInInputs.username,
-        password: signInInputs.password
-      })
-      if ('accessToken' in result) {
-        localStorage.setItem('accessToken', result.accessToken);
-        navigate("/admin");
-      }
-      else {
-        toast.error("Invalid username or password.");
-      }
+    else {
+      toast.error("Invalid username or password.");
     }
   }
 
@@ -63,28 +37,32 @@ const SignIn = () => {
           coffee<br/>
           <span className="text-[18px]">blend</span>
         </h1>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <div className="form-box">
             <label>Username</label>
-            <input 
-              type="text" 
-              name="username" 
+            <input
+              type="text"
+              {...register('username', { required: '* Your username is required.' })}
               placeholder="Please insert your username."
-              value={signInInputs.username} 
-              onChange={handleChange}
             />
-            {errors.username && <div className="validate-error" style={{padding: 0, marginTop: '15px'}}>{errors.username}</div>}
+            { errors.username &&
+              <div className="validate-error" style={{ padding: 0, marginTop: '15px' }}>
+                { errors.username.message }
+              </div>
+            }
           </div>
           <div className="form-box">
             <label>Password</label>
             <input
               type="password"
-              name="password"
+              {...register('password', { required: '* Your password is required.' })}
               placeholder="Please insert your password."
-              value={signInInputs.password} 
-              onChange={handleChange}
             />
-            {errors.password && <div className="validate-error" style={{padding: 0, marginTop: '15px'}}>{errors.password}</div>}
+            { errors.password &&
+              <div className="validate-error" style={{ padding: 0, marginTop: '15px' }}>
+                { errors.password.message }
+              </div>
+            }
           </div>
           <div className="form-box">
             <button type="submit" className="btn-primary cursor-pointer">Sign In</button>
