@@ -10,7 +10,7 @@ const Cart = () => {
 
   const dispatch = useDispatch();
 
-  const { cartItems, totalPrice, scrollToDiv } = useSelector((state) => state.cart);
+  const { cartItems, totalPrice } = useSelector((state) => state.cart);
 
   const { formatNumber } = useGlobalContext();
 

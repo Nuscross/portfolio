@@ -10,7 +10,7 @@ const OrderHistory = () => {
 
   const { orderItems } = useSelector((state) => state.order);
 
-  const { formatNumber, scrollToDiv } = useGlobalContext();
+  const { formatNumber } = useGlobalContext();
 
   return (
     <>
