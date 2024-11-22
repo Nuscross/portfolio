@@ -9,7 +9,7 @@ const initialState = {
 
 const cartSlice = createSlice({
   name: 'cart',
-  initialState,
+  initialState: JSON.parse(localStorage.getItem('cart')) || initialState,
   reducers: {
     addMenu: (state, action) => {
       const itemAdd = action.payload;
@@ -21,6 +21,7 @@ const cartSlice = createSlice({
       }
       state.amount += 1;
       state.totalPrice += itemAdd.price;
+      localStorage.setItem('cart', JSON.stringify(state));
       toast.success(`Add ${itemAdd.title} to cart.`);
     },
     removeMenu: (state, action) => {
@@ -28,21 +29,29 @@ const cartSlice = createSlice({
       state.cartItems = state.cartItems.filter(item => item.id !== itemRemove.id);
       state.amount -= itemRemove.amount;
       state.totalPrice -= itemRemove.price * itemRemove.amount;
+      localStorage.setItem('cart', JSON.stringify(state));
     },
     increase: (state, { payload }) => {
       const cartItem = state.cartItems.find((item) => item.id === payload);
-      cartItem.amount += 1; 
+      cartItem.amount += 1;
+      state.amount += 1;
       state.totalPrice += cartItem.price;
+      localStorage.setItem('cart', JSON.stringify(state));
     },
     decrease: (state, { payload }) => {
       const cartItem = state.cartItems.find((item) => item.id === payload);
       cartItem.amount -= 1;
+      state.amount -= 1;
       state.totalPrice -= cartItem.price;
       if (cartItem.amount === 0) {
         state.cartItems = state.cartItems.filter(item => item.id !== payload);
       }
+      localStorage.setItem('cart', JSON.stringify(state));
     },
-    clearCart: () => initialState,
+    clearCart: () => {
+      localStorage.removeItem('cart');
+      return { ...initialState };
+    },
   }
 })
 

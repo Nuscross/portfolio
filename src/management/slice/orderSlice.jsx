@@ -17,7 +17,7 @@ const formatDate = (addDate) => {
 
 const orderSlice = createSlice({
   name: 'cart',
-  initialState,
+  initialState: JSON.parse(localStorage.getItem('order')) || initialState,
   reducers: {
     saveOrder: (state, action) => {
       const itemAdd = action.payload;
@@ -28,10 +28,12 @@ const orderSlice = createSlice({
         total: itemAdd.totalPrice,
         date: orderDate
       });
+      localStorage.setItem('order', JSON.stringify(state));
       toast.success(`Save order successfully.`);
     },
     clearOrder: (state) => {
       state.orderItems = [];
+      localStorage.removeItem('order');
       toast.success(`Clear order successfully.`);
     }
   }
