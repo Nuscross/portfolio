@@ -1,7 +1,10 @@
+import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { IoClose } from "react-icons/io5";
 
 const MobileNavigation = ({isToggle,toggleMenu}) => {
+
+  const { amount } = useSelector((state) => state.cart);
 
   return (
     <>
@@ -18,7 +21,7 @@ const MobileNavigation = ({isToggle,toggleMenu}) => {
             <NavLink to="/contact" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} onClick={toggleMenu}>Contact</NavLink>
             <NavLink to="/sign-in" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} onClick={toggleMenu}>Sign In</NavLink>
             <NavLink to="/cart" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} onClick={toggleMenu}>
-              <div className="item-count">3</div>
+              <div className="item-count">{amount}</div>
               Cart
             </NavLink>
           </div>
