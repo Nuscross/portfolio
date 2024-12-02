@@ -13,14 +13,14 @@ const MobileNavigation = ({isToggle,toggleMenu}) => {
           <IoClose onClick={toggleMenu} />
         </div>
         <div className="nav-menu">
-            <NavLink to="/" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} onClick={toggleMenu}>Home</NavLink>
-            <NavLink to="/menu" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} onClick={toggleMenu}>Menu</NavLink>
-            <NavLink to="/services" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} onClick={toggleMenu}>Services</NavLink>
-            <NavLink to="/blog" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} onClick={toggleMenu}>Blog</NavLink>
-            <NavLink to="/about" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} onClick={toggleMenu}>About</NavLink>
-            <NavLink to="/contact" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} onClick={toggleMenu}>Contact</NavLink>
-            <NavLink to="/sign-in" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} onClick={toggleMenu}>Sign In</NavLink>
-            <NavLink to="/cart" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} onClick={toggleMenu}>
+            <NavLink to="/" className="nav-link" onClick={toggleMenu}>Home</NavLink>
+            <NavLink to="/menu" className="nav-link" onClick={toggleMenu}>Menu</NavLink>
+            <NavLink to="/services" className="nav-link" onClick={toggleMenu}>Services</NavLink>
+            <NavLink to="/blog" className="nav-link" onClick={toggleMenu}>Blog</NavLink>
+            <NavLink to="/about" className="nav-link" onClick={toggleMenu}>About</NavLink>
+            <NavLink to="/contact" className="nav-link" onClick={toggleMenu}>Contact</NavLink>
+            <NavLink to="/sign-in" className="nav-link" onClick={toggleMenu}>Sign In</NavLink>
+            <NavLink to="/cart" className="nav-link" onClick={toggleMenu}>
               <div className="item-count">{amount}</div>
               Cart
             </NavLink>
