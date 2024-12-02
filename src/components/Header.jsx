@@ -31,14 +31,14 @@ const Header = ({toggleMenu}) => {
         </h1>
         <GiHamburgerMenu className="menu-hamburger" onClick={toggleMenu} />
         <div className="nav-menu">
-          <NavLink to="/" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} onClick={() => window.scrollTo(0, 0)}>Home</NavLink>
-          <NavLink to="/menu" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} onClick={() => window.scrollTo(0, 0)}>Menu</NavLink>
-          <NavLink to="/services" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} onClick={() => window.scrollTo(0, 0)}>Services</NavLink>
-          <NavLink to="/blog" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} onClick={() => window.scrollTo(0, 0)}>Blog</NavLink>
-          <NavLink to="/about" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} onClick={() => window.scrollTo(0, 0)}>About</NavLink>
-          <NavLink to="/contact" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} onClick={() => window.scrollTo(0, 0)}>Contact</NavLink>
-          <NavLink to="/sign-in" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} onClick={() => window.scrollTo(0, 0)}>Sign In</NavLink>
-          <NavLink to="/cart" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} onClick={() => window.scrollTo(0, 0)}>
+          <NavLink to="/" className="nav-link" onClick={() => window.scrollTo(0, 0)}>Home</NavLink>
+          <NavLink to="/menu" className="nav-link" onClick={() => window.scrollTo(0, 0)}>Menu</NavLink>
+          <NavLink to="/services" className="nav-link" onClick={() => window.scrollTo(0, 0)}>Services</NavLink>
+          <NavLink to="/blog" className="nav-link" onClick={() => window.scrollTo(0, 0)}>Blog</NavLink>
+          <NavLink to="/about" className="nav-link" onClick={() => window.scrollTo(0, 0)}>About</NavLink>
+          <NavLink to="/contact" className="nav-link" onClick={() => window.scrollTo(0, 0)}>Contact</NavLink>
+          <NavLink to="/sign-in" className="nav-link" onClick={() => window.scrollTo(0, 0)}>Sign In</NavLink>
+          <NavLink to="/cart" className="nav-link" onClick={() => window.scrollTo(0, 0)}>
             <div className="item-count">{amount}</div>
             <FaCartShopping className="icon-cart" />
           </NavLink>
