@@ -15,9 +15,13 @@ const formatDate = (addDate) => {
   return formattedDate;
 }
 
+const getOrderFromLocalStorage = () => {
+  return JSON.parse(localStorage.getItem('order')) || initialState;
+}
+
 const orderSlice = createSlice({
-  name: 'cart',
-  initialState: JSON.parse(localStorage.getItem('order')) || initialState,
+  name: 'order',
+  initialState: getOrderFromLocalStorage(),
   reducers: {
     saveOrder: (state, action) => {
       const itemAdd = action.payload;
@@ -31,10 +35,10 @@ const orderSlice = createSlice({
       localStorage.setItem('order', JSON.stringify(state));
       toast.success(`Save order successfully.`);
     },
-    clearOrder: (state) => {
-      state.orderItems = [];
+    clearOrder: () => {
       localStorage.removeItem('order');
       toast.success(`Clear order successfully.`);
+      return initialState;
     }
   }
 })

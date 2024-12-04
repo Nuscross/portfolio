@@ -7,9 +7,13 @@ const initialState = {
   totalPrice: 0,
 }
 
+const getCartFromLocalStorage = () =>  {
+  return JSON.parse(localStorage.getItem('cart')) || initialState;
+}
+
 const cartSlice = createSlice({
   name: 'cart',
-  initialState: JSON.parse(localStorage.getItem('cart')) || initialState,
+  initialState: getCartFromLocalStorage(),
   reducers: {
     addMenu: (state, action) => {
       const itemAdd = action.payload;
@@ -50,7 +54,7 @@ const cartSlice = createSlice({
     },
     clearCart: () => {
       localStorage.removeItem('cart');
-      return { ...initialState };
+      return initialState;
     },
   }
 })
