@@ -1,36 +1,40 @@
-$color-black: #000000;
-$color-white: #ffffff;
-$color-gold: #c49b63;
-$color-error: rgb(248 113 113);
+@use 'variables';
 
-/******************************/
-
+/* global tag */
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus, 
 input:-webkit-autofill:active  {
   transition: background-color 5000s;
-  -webkit-text-fill-color: $color-white !important;
+  -webkit-text-fill-color: variables.$color-white !important;
 }
+
+/* padding */
 .pb-30 {
   padding-bottom: 30px !important;
 }
+
+/* font size  */
 .font-14 {
-  font-size: 14px !important;
+  font-size: variables.$font-14 !important;
 }
+
+/* color */
 .validate-error {
   padding: 0 15px;
-  color: $color-error;
+  color: variables.$color-error;
 }
+
+/* button */
 .btn-primary {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: $color-black;
-  background-color: $color-gold;
-  border: 1px solid $color-gold;
+  color: variables.$color-black;
+  background-color: variables.$color-gold;
+  border: 1px solid variables.$color-gold;
   &:hover {
-    color: $color-gold;
+    color: variables.$color-gold;
     background-color: transparent;
   }
 }
@@ -38,28 +42,30 @@ input:-webkit-autofill:active  {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: $color-white;
+  color: variables.$color-white;
   background-color: transparent;
-  border: 1px solid $color-white;
+  border: 1px solid variables.$color-white;
   &:hover {
-    color: $color-black;
-    background-color: $color-gold;
-    border: 1px solid $color-gold;
+    color: variables.$color-black;
+    background-color: variables.$color-gold;
+    border: 1px solid variables.$color-gold;
   }
 }
 .btn-third {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: $color-gold;
+  color: variables.$color-gold;
   background-color: transparent;
-  border: 1px solid $color-gold;
+  border: 1px solid variables.$color-gold;
   &:hover {
-    color: $color-black;
-    background-color: $color-gold;
-    border: 1px solid $color-gold;
+    color: variables.$color-black;
+    background-color: variables.$color-gold;
+    border: 1px solid variables.$color-gold;
   }
 }
+
+/* loading */
 .loading-content {
   margin: 0 auto;
   width: 80px;
@@ -68,17 +74,18 @@ input:-webkit-autofill:active  {
   display: inline-block;
   width: 80px;
   height: 80px;
-  border: 5px solid $color-gold;
+  border: 5px solid variables.$color-gold;
   border-bottom-color: transparent;
   border-radius: 50%;
   animation: rotation 1s linear infinite;
 }
 
+/* animation */
 @keyframes rotation {
-0% {
-    transform: rotate(0deg);
-}
-100% {
-    transform: rotate(360deg);
-}
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
 } 

@@ -1,12 +1,8 @@
-$color-black: #000000;
-$color-white: #ffffff;
-$color-gold: #c49b63;
-
-/******************************/
+@use 'variables';
 
 .slider-container {
   position: relative;
-  background-color: $color-black;
+  background-color: variables.$color-black;
   .slider-content {
     display: flex;
     flex-direction: column;
@@ -16,23 +12,23 @@ $color-gold: #c49b63;
     left: 50%;
     padding: 0 20px;
     width: 700px;
-    color: $color-white;
+    color: variables.$color-white;
     letter-spacing: 1px;
     text-align: center;
     transform: translate(-50%,-50%);
     z-index: 20;
     p {
-      font-size: 18px;
+      font-size: variables.$font-18;
     }
     .title {
       margin: 0 0 30px;
-      font-size: 40px;
+      font-size: variables.$font-40;
       text-transform: uppercase;
     }
     .sub-title {
       margin-bottom: 10px;
-      color: $color-gold;
-      font-size: 24px;
+      color: variables.$color-gold;
+      font-size: variables.$font-24;
       font-style: italic;
     }
     .slider-button {
@@ -41,7 +37,7 @@ $color-gold: #c49b63;
       a {
         width: 120px;
         height: 50px;
-        font-size: 13px;
+        font-size: variables.$font-13;
         border-radius: 4px;
         & + a {
           margin-left: 8px;
@@ -53,7 +49,7 @@ $color-gold: #c49b63;
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: $color-black;
+    background-color: variables.$color-black;
     opacity: 0.3;
     z-index: 10;
   }
@@ -68,8 +64,8 @@ $color-gold: #c49b63;
     bottom: 50px;
     li {
       button:before {
-        font-size: 20px;
-        color: $color-white;
+        font-size: variables.$font-20;
+        color: variables.$color-white;
       }
     }
   }

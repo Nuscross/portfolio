@@ -1,12 +1,4 @@
-$bg-black: #120f0f;
-$color-black: #000000;
-$color-black-light: #1d150b;
-$color-white: #ffffff;
-$color-gold: #c49b63;
-$color-gold-dark: #674C2A;
-$color-grey: #808080;
-
-/******************************/
+@use 'variables';
 
 .pagination-container {
   display: flex;
@@ -18,14 +10,14 @@ $color-grey: #808080;
     padding: 0 10px;
     min-width: 30px;
     height: 30px;
-    color: $color-gold;
+    color: variables.$color-gold;
     background: transparent;
-    border: 1px solid $color-gold;
+    border: 1px solid variables.$color-gold;
     border-radius: 4px;
     cursor: pointer;
     &:hover, &.active {
-      color: $color-black;
-      background-color: $color-gold;
+      color: variables.$color-black;
+      background-color: variables.$color-gold;
     }
   }
 }

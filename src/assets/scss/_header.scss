@@ -1,10 +1,4 @@
-$color-black: #000000;
-$color-white: #ffffff;
-$color-gold: #c49b63;
-$color-yellow: #f8b500;
-$color-border: rgba(255, 255, 255, 0.1);
-
-/******************************/
+@use 'variables';
 
 .header {
   display: flex;
@@ -14,15 +8,15 @@ $color-border: rgba(255, 255, 255, 0.1);
   padding: 0 20px;
   width: 100%;
   height: 90px;
-  border-bottom: 1px solid $color-border;
+  border-bottom: 1px solid variables.$color-border;
   z-index: 100;
   &.header-scrolled {
-    background-color: rgba(0,0,0,0.9);
+    background-color: variables.$bg-black-light;
   }
   .menu-hamburger {
     display: none;
-    color: $color-white;
-    font-size: 24px;
+    color: variables.$color-white;
+    font-size: variables.$font-24;
     cursor: pointer;
   }
   .header-container {
@@ -33,8 +27,8 @@ $color-border: rgba(255, 255, 255, 0.1);
     max-width: 1140px;
     width: 100%;
     h1 {
-      color: $color-white;
-      font-size: 22px;
+      color: variables.$color-white;
+      font-size: variables.$font-22;
       line-height: 16px;
       letter-spacing: 1px;
       text-align: center;
@@ -48,12 +42,12 @@ $color-border: rgba(255, 255, 255, 0.1);
       column-gap: 30px;
       .nav-link {
         position: relative;
-        color: $color-white;
-        font-size: 12px;
+        color: variables.$color-white;
+        font-size: variables.$font-12;
         letter-spacing: 1px;
         text-transform: uppercase;
         &:hover, &.active {
-          color: $color-gold;
+          color: variables.$color-gold;
         }
         .item-count {
           display: flex;
@@ -64,13 +58,13 @@ $color-border: rgba(255, 255, 255, 0.1);
           right: -10px;
           width: 20px;
           height: 20px;
-          color: $color-black;
-          font-size: 12px;
-          background-color: $color-yellow;
+          color: variables.$color-black;
+          font-size: variables.$font-12;
+          background-color: variables.$color-yellow;
           border-radius: 50%;
         }
         .icon-cart {
-          font-size: 18px;
+          font-size: variables.$font-18;
         }
       }
     }

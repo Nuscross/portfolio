@@ -1,21 +1,11 @@
-$bg-black: #120f0f;
-$color-black: #000000;
-$color-black-light: #1d150b;
-$color-white: #ffffff;
-$color-gold: #c49b63;
-$color-gold-dark: #674C2A;
-$color-grey: #808080;
-$color-yellow: #f8b500;
-$color-border: rgba(255, 255, 255, 0.1);
-
-/******************************/
+@use 'variables';
 
 body {
-  font-size: 14px;
+  font-size: variables.$font-14;
   background-image: url("/src/assets/images/bg_4.jpg");
   background-repeat: repeat-y;
   background-attachment: fixed;
-  background-color: $bg-black;
+  background-color: variables.$bg-black;
 }
 
 /** container **/
@@ -35,7 +25,7 @@ body {
   justify-content: center;
   width: 100%;
   height: 100vh;
-  background-color: $color-black;
+  background-color: variables.$color-black;
 }
 
 /** mobile navigation **/
@@ -45,7 +35,7 @@ body {
   bottom: 0;
   width: 240px;
   height: 100%;
-  background-color: $color-black;
+  background-color: variables.$color-black;
   transition: left 0.3s linear;
   overflow: auto;
   z-index: 1000;
@@ -56,10 +46,10 @@ body {
     display: flex;
     justify-content: flex-end;
     padding: 15px 20px;
-    border-bottom: 1px solid $color-border;
+    border-bottom: 1px solid variables.$color-border;
     svg {
-      color: $color-white;
-      font-size: 28px;
+      color: variables.$color-white;
+      font-size: variables.$font-28;
     }
   }
   .nav-menu {
@@ -69,13 +59,13 @@ body {
     .nav-link {
       position: relative;
       padding: 15px 20px;
-      color: $color-white;
-      font-size: 12px;
+      color: variables.$color-white;
+      font-size: variables.$font-12;
       letter-spacing: 1px;
       text-transform: uppercase;
-      border: 1px solid $color-border;
+      border: 1px solid variables.$color-border;
       &:hover, &.active {
-        color: $color-gold;
+        color: variables.$color-gold;
       }
       .item-count {
         display: flex;
@@ -86,13 +76,13 @@ body {
         left: 70px;
         width: 20px;
         height: 20px;
-        color: $color-black;
-        font-size: 12px;
-        background-color: $color-yellow;
+        color: variables.$color-black;
+        font-size: variables.$font-12;
+        background-color: variables.$color-yellow;
         border-radius: 50%;
       }
       .icon-cart {
-        font-size: 18px;
+        font-size: variables.$font-18;
       }
     }
   }
@@ -119,19 +109,19 @@ body {
   justify-content: center;
   padding: 0 20px;
   min-height: 100vh;
-  background-color: $bg-black;
+  background-color: variables.$bg-black;
   p {
-    color: $color-grey;
-    font-size: 18px;
+    color: variables.$color-grey;
+    font-size: variables.$font-18;
   }
   .title {
-    color: $color-gold;
-    font-size: 100px;
+    color: variables.$color-gold;
+    font-size: variables.$font-100;
   }
   .sub-title {
     margin-bottom: 20px;
-    color: $color-white;
-    font-size: 40px;
+    color: variables.$color-white;
+    font-size: variables.$font-40;
   }
   .btn-back {
     display: block;
@@ -165,18 +155,18 @@ body {
       padding: 50px 30px;
       background: rgba(0,0,0,0.5);
       p {
-        color: $color-grey;
-        font-size: 16px;
+        color: variables.$color-grey;
+        font-size: variables.$font-16;
         line-height: 30px;
       }
       .title {
         margin: 0 0 30px;
-        color: $color-white;
-        font-size: 40px;
+        color: variables.$color-white;
+        font-size: variables.$font-40;
         font-weight: bold;
         text-transform: uppercase;
         span {
-          color: $color-gold;
+          color: variables.$color-gold;
         }
       }
     }
@@ -185,7 +175,7 @@ body {
 
 /** home menu **/
 .h-menu {
-  background-color: $bg-black;
+  background-color: variables.$bg-black;
   .h-menu-container {
     display: flex;
     align-items: center;
@@ -196,25 +186,25 @@ body {
       align-items: flex-end;
       width: 50%;
       p {
-        color: $color-grey;
-        font-size: 16px;
+        color: variables.$color-grey;
+        font-size: variables.$font-16;
         line-height: 30px;
         text-align: right;
       }
       a {
         width: 120px;
         height: 50px;
-        font-size: 13px;
+        font-size: variables.$font-13;
         border-radius: 4px;
       }
       .title {
         margin: 0 0 30px;
-        color: $color-white;
-        font-size: 40px;
+        color: variables.$color-white;
+        font-size: variables.$font-40;
         font-weight: bold;
         text-transform: uppercase;
         span {
-          color: $color-gold;
+          color: variables.$color-gold;
         }
       }
     }
@@ -244,18 +234,18 @@ body {
       text-align: center;
       .title {
         margin-bottom: 40px;
-        color: $color-white;
-        font-size: 40px;
+        color: variables.$color-white;
+        font-size: variables.$font-40;
         line-height: 40px;
         font-weight: bold;
         text-transform: uppercase;
         span {
-          color: $color-gold;
+          color: variables.$color-gold;
         }
       }
       p {
-        color: $color-grey;
-        font-size: 15px;
+        color: variables.$color-grey;
+        font-size: variables.$font-15;
       }
     }
     .menu-category {
@@ -265,19 +255,19 @@ body {
       column-gap: 10px;
       margin-top: 40px;
       label {
-        color: $color-gold;
-        font-size: 20px;
+        color: variables.$color-gold;
+        font-size: variables.$font-20;
       }
       select {
         appearance: none;
         -moz-appearance:none;
         -webkit-appearance:none;
         padding: 7px 5px;
-        color: $color-white;
-        font-size: 16px;
+        color: variables.$color-white;
+        font-size: variables.$font-16;
         text-align: center;
         background-color: transparent;
-        border: 1px solid $color-gold;
+        border: 1px solid variables.$color-gold;
         border-radius: 4px;  
         outline: none;    
       }
@@ -292,22 +282,22 @@ body {
         width: calc(33% - 30px);
         .title {
           margin-bottom: 20px;
-          color: $color-white;
-          font-size: 18px;
+          color: variables.$color-white;
+          font-size: variables.$font-18;
           font-weight: bold;
           text-align: center;
         }
         button {
           margin: 30px auto 0;
           padding: 10px;
-          font-size: 13px;
+          font-size: variables.$font-13;
           border-radius: 4px;
         }
         .description {
           margin-bottom: 30px;
           min-height: 100px;
-          color: $color-grey;
-          font-size: 14px;
+          color: variables.$color-grey;
+          font-size: variables.$font-14;
           line-height: 24px;
           text-align: center;
         }
@@ -320,8 +310,8 @@ body {
           background-size: cover;
         }
         .price {
-          color: $color-white;
-          font-size: 20px;
+          color: variables.$color-white;
+          font-size: variables.$font-20;
           text-align: center;
         }
       }
@@ -331,7 +321,7 @@ body {
 
 /** service **/
 .service {
-  background-color: $color-gold;
+  background-color: variables.$color-gold;
   .service-container {
     display: flex;
     column-gap: 50px;
@@ -344,21 +334,21 @@ body {
         margin: 0 auto 50px;
         width: 100px;
         height: 100px;
-        border: 1px solid $color-gold-dark;
+        border: 1px solid variables.$color-gold-dark;
         border-radius: 4px;
         svg {
-          color: $color-black-light;
-          font-size: 50px;
+          color: variables.$color-black-light;
+          font-size: variables.$font-50;
         }
       }
       p {
-        color: $color-black-light;
-        font-size: 16px;
+        color: variables.$color-black-light;
+        font-size: variables.$font-16;
         line-height: 30px;
       }
       .title {
         margin: 0 0 25px;
-        font-size: 18px;
+        font-size: variables.$font-18;
         font-weight: 500;
         text-transform: uppercase;
       }
@@ -374,13 +364,13 @@ body {
     .blog-heading {
       text-align: center;
       p {
-        color: $color-grey;
-        font-size: 15px;
+        color: variables.$color-grey;
+        font-size: variables.$font-15;
       }
       .title {
         margin-bottom: 40px;
-        color: $color-white;
-        font-size: 40px;
+        color: variables.$color-white;
+        font-size: variables.$font-40;
         font-weight: bold;
         text-transform: uppercase;
       }
@@ -399,27 +389,27 @@ body {
       }
       p {
         margin-bottom: 15px;
-        color: $color-grey;
-        font-size: 16px;
+        color: variables.$color-grey;
+        font-size: variables.$font-16;
       }
       small {
         display: flex;
         align-items: center;
-        color: $color-grey;
-        font-size: 14px;
+        color: variables.$color-grey;
+        font-size: variables.$font-14;
         svg {
           display: inline;
           margin-right: 10px;
-          color: $color-gold-dark;
+          color: variables.$color-gold-dark;
         }
       }
       .item-title {
         margin-bottom: 20px;
-        font-size: 18px;
+        font-size: variables.$font-18;
         a {
-          color: $color-white;
+          color: variables.$color-white;
           &:hover {
-            color: $color-gold;
+            color: variables.$color-gold;
           }
         }
       }
@@ -443,20 +433,20 @@ body {
       width: 65%;
       p {
         margin-bottom: 10px;
-        color: $color-grey;
-        font-size: 16px;
+        color: variables.$color-grey;
+        font-size: variables.$font-16;
         line-height: 32px;
       }
       small {
         display: flex;
         align-items: center;
         margin-bottom: 30px;
-        color: $color-grey;
-        font-size: 16px;
+        color: variables.$color-grey;
+        font-size: variables.$font-16;
         svg {
           display: inline;
           margin-right: 10px;
-          color: $color-gold-dark;
+          color: variables.$color-gold-dark;
         }
       }
       img {
@@ -467,8 +457,8 @@ body {
       }
       .title {
         margin-bottom: 30px;
-        color: $color-white;
-        font-size: 32px;
+        color: variables.$color-white;
+        font-size: variables.$font-32;
         font-weight: bold;
       }
     }
@@ -477,8 +467,8 @@ body {
       width: 35%;
       .title {
         margin-bottom: 30px;
-        color: $color-white;
-        font-size: 24px;
+        color: variables.$color-white;
+        font-size: variables.$font-24;
       }
       .other-article {
         display: flex;
@@ -496,34 +486,34 @@ body {
         }
         .icon {
           margin: 6px 24px 0 0;
-          color: $color-white;
-          font-size: 16px;
+          color: variables.$color-white;
+          font-size: variables.$font-16;
         }
         .media-body {
           flex: 1;
           a {
-            color: $color-white;
-            font-size: 16px;
+            color: variables.$color-white;
+            font-size: variables.$font-16;
             line-height: 26px;
             &:hover {
-              color: $color-gold;
+              color: variables.$color-gold;
             }
           } 
           p {
             margin-bottom: 10px;
-            color: $color-grey;
-            font-size: 16px;
+            color: variables.$color-grey;
+            font-size: variables.$font-16;
             line-height: 26px;
           }
           small {
             display: flex;
             align-items: center;
-            color: $color-grey;
-            font-size: 12px;
+            color: variables.$color-grey;
+            font-size: variables.$font-12;
             svg {
               display: inline;
               margin-right: 10px;
-              color: $color-gold-dark;
+              color: variables.$color-gold-dark;
             }
           }
         }
@@ -540,16 +530,16 @@ body {
     .contact-content {
       width: 50%;
       h2 {
-        color: $color-white;
-        font-size: 24px;
+        color: variables.$color-white;
+        font-size: variables.$font-24;
       }
       ul {
         li {
           margin-top: 20px;
-          color: $color-gold;
-          font-size: 16px;
+          color: variables.$color-gold;
+          font-size: variables.$font-16;
           span {
-            color: $color-white;
+            color: variables.$color-white;
           }
         }
       }
@@ -568,7 +558,7 @@ body {
       .input-form {
         padding: 15px;
         width: 100%;
-        color: $color-white;
+        color: variables.$color-white;
         background-color: transparent;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         outline: none;
@@ -587,20 +577,20 @@ body {
     tr {
       th {
         padding: 20px;
-        color: $color-black;
-        font-size: 16px;
+        color: variables.$color-black;
+        font-size: variables.$font-16;
         font-weight: bold;
-        background-color: $color-gold;
+        background-color: variables.$color-gold;
       }
       td {
         padding: 40px 20px;
-        border-bottom: 1px solid $color-border;
+        border-bottom: 1px solid variables.$color-border;
         svg {
-          color: $color-grey;
-          font-size: 25px;
+          color: variables.$color-grey;
+          font-size: variables.$font-25;
           cursor: pointer;
           &:hover {
-            color: $color-gold;
+            color: variables.$color-gold;
           }
         }
         .product-photo {
@@ -611,16 +601,16 @@ body {
           background-position: center;
         }
         .product-name {
-          color: $color-white;
-          font-size: 18px;
+          color: variables.$color-white;
+          font-size: variables.$font-18;
         }
         .product-detail {
           margin-top: 5px;
-          color: $color-grey;
+          color: variables.$color-grey;
         }
         .product-price {
-          color: $color-white;
-          font-size: 18px;
+          color: variables.$color-white;
+          font-size: variables.$font-18;
         }
         .product-amount {
           display: flex;
@@ -629,25 +619,25 @@ body {
           .input-amount {
             width: 100px;
             height: 30px;
-            color: $color-white;
+            color: variables.$color-white;
             text-align: center;
             line-height: 30px;
-            border: 1px solid $color-grey;
+            border: 1px solid variables.$color-grey;
           }
         }
         .product-total {
-          color: $color-white;
-          font-size: 28px;
+          color: variables.$color-white;
+          font-size: variables.$font-28;
           font-weight: bold;
           text-align: right;
           span {
             margin-right: 10px;
-            color: $color-gold;
+            color: variables.$color-gold;
           }
         }
         .no-cart-item {
-          color: $color-white;
-          font-size: 18px;
+          color: variables.$color-white;
+          font-size: variables.$font-18;
           text-align: center;
         }
       }
@@ -662,7 +652,7 @@ body {
   .btn-cart {
     display: inline-block;
     padding: 15px 25px;
-    font-size: 16px;
+    font-size: variables.$font-16;
     text-align: center;
     border-radius: 4px;
   }
@@ -672,17 +662,17 @@ body {
 .order {
   .order-table {
     width: 100%;
-    border: 1px solid $color-border;
+    border: 1px solid variables.$color-border;
     tr {
       th {
         padding: 10px 20px;
         text-align: left;
-        background-color: $color-gold-dark;
+        background-color: variables.$color-gold-dark;
         .order-title {
           display: flex;
           align-items: center;
-          color: $color-white;
-          font-size: 16px;
+          color: variables.$color-white;
+          font-size: variables.$font-16;
           svg {
             display: inline;
             margin-right: 10px;
@@ -691,7 +681,7 @@ body {
       }
       td {
         padding: 15px 20px;
-        border-bottom: 1px solid $color-border;
+        border-bottom: 1px solid variables.$color-border;
         .product-photo {
           width: 70px;
           height: 70px;
@@ -700,40 +690,40 @@ body {
           background-position: center;
         }
         .product-name {
-          color: $color-white;
-          font-size: 18px;
+          color: variables.$color-white;
+          font-size: variables.$font-18;
         }
         .product-detail {
           margin-top: 5px;
-          color: $color-grey;
+          color: variables.$color-grey;
         }
         .product-price {
-          color: $color-white;
-          font-size: 18px;
+          color: variables.$color-white;
+          font-size: variables.$font-18;
         }
         .product-amount {
           .input-amount {
             width: 100px;
             height: 30px;
-            color: $color-white;
+            color: variables.$color-white;
             text-align: center;
             line-height: 30px;
-            border: 1px solid $color-grey;
+            border: 1px solid variables.$color-grey;
           }
         }
         .product-total {
-          color: $color-white;
-          font-size: 20px;
+          color: variables.$color-white;
+          font-size: variables.$font-20;
           font-weight: bold;
           text-align: right;
           span {
             margin-right: 10px;
-            color: $color-gold;
+            color: variables.$color-gold;
           }
         }
         .no-cart-item {
-          color: $color-white;
-          font-size: 18px;
+          color: variables.$color-white;
+          font-size: variables.$font-18;
           text-align: center;
         }
       }
@@ -751,7 +741,7 @@ body {
   .btn-cart {
     display: inline-block;
     padding: 15px 25px;
-    font-size: 16px;
+    font-size: variables.$font-16;
     text-align: center;
     border-radius: 4px;
   }
@@ -786,12 +776,12 @@ body {
     padding: 50px;
     max-width: 400px;
     width: 100%;
-    border: 1px solid $color-gold;
+    border: 1px solid variables.$color-gold;
     border-radius: 8px;
     z-index: 20;
     h1 {
-      color: $color-white;
-      font-size: 32px;
+      color: variables.$color-white;
+      font-size: variables.$font-32;
       line-height: 28px;
       letter-spacing: 1px;
       text-align: center;
@@ -810,13 +800,13 @@ body {
         label {
           display: block;
           margin-bottom: 5px;
-          color: $color-gold;
-          font-size: 16px;
+          color: variables.$color-gold;
+          font-size: variables.$font-16;
         }
         input {
           padding: 10px 0;
           width: 100%;
-          color: $color-white;
+          color: variables.$color-white;
           background-color: transparent;
           border-bottom: 1px solid rgba(255, 255, 255, 0.1);
           outline: none;
@@ -834,21 +824,21 @@ body {
     position: absolute;
     z-index: 20;
     p {
-      color: $color-grey;
-      font-size: 18px;
+      color: variables.$color-grey;
+      font-size: variables.$font-18;
       text-align: center;
     }
     .title {
       margin-bottom: 20px;
-      color: $color-white;
-      font-size: 40px;
+      color: variables.$color-white;
+      font-size: variables.$font-40;
     }
     .avatar {
       display: block;
       margin: 40px auto 20px;
       width: 80px;
       height: 80px;
-      border: 2px solid $color-gold;
+      border: 2px solid variables.$color-gold;
       border-radius: 50%;
     }
     .btn-back {

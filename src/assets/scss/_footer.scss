@@ -1,12 +1,7 @@
-$color-white: #ffffff;
-$color-gold: #c49b63;
-$color-grey: #808080;
-$bg-black: #120f0f;
-
-/******************************/
+@use 'variables';
 
 .footer {
-  background-color: $bg-black;
+  background-color: variables.$bg-black;
   .footer-container {
     .footer-content {
       display: flex;
@@ -14,8 +9,8 @@ $bg-black: #120f0f;
       .ft-about {
         width: 30%;
         p {
-          color: $color-grey;
-          font-size: 16px;
+          color: variables.$color-grey;
+          font-size: variables.$font-16;
           line-height: 30px;
         }
         .social-link {
@@ -23,10 +18,10 @@ $bg-black: #120f0f;
           column-gap: 20px;
           margin-top: 50px;
           a {
-            color: $color-white;
+            color: variables.$color-white;
             font-size: 30px;
             &:hover {
-              color: $color-gold;
+              color: variables.$color-gold;
             }
           }
         }
@@ -40,8 +35,8 @@ $bg-black: #120f0f;
       .ft-about, .ft-blog, .ft-question {
         .ft-title {
           margin-bottom: 40px;
-          color: $color-white;
-          font-size: 16px;
+          color: variables.$color-white;
+          font-size: variables.$font-16;
           font-weight: bold;
           letter-spacing: 1px;
           text-transform: uppercase;
@@ -64,22 +59,22 @@ $bg-black: #120f0f;
           }
           .icon {
             margin: 6px 24px 0 0;
-            color: $color-white;
-            font-size: 16px;
+            color: variables.$color-white;
+            font-size: variables.$font-16;
           }
           .media-body {
             flex: 1;
             a {
-              color: $color-white;
-              font-size: 16px;
+              color: variables.$color-white;
+              font-size: variables.$font-16;
               line-height: 26px;
               &:hover {
-                color: $color-gold;
+                color: variables.$color-gold;
               }
             } 
             p {
-              color: $color-grey;
-              font-size: 16px;
+              color: variables.$color-grey;
+              font-size: variables.$font-16;
               line-height: 26px;
             }
           }
@@ -89,8 +84,8 @@ $bg-black: #120f0f;
     .copy {
       margin-top: 100px;
       width: 100%;
-      color: $color-grey;
-      font-size: 16px;
+      color: variables.$color-grey;
+      font-size: variables.$font-16;
       text-align: center;
     }
   }
