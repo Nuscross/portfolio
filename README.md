@@ -1,6 +1,6 @@
 How to run project
 
-On terminal run command : 
+On terminal and run command : 
 
 - npm install
 
